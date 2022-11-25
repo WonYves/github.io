@@ -3,11 +3,36 @@ module.exports = {
     description: '分享笔记，技术博客',
     themeConfig: {
         nav: [
-            { text: 'Css', link: '/' },
-            { text: 'JavaScript', link: '' },
-            { text: 'Vue', link: 'https://google.com' },
-            { text: 'React', link: '/React/react.md' },
-            { text: '随便聊聊', link: 'https://google.com' },
+            { text: 'React', 
+            items:[
+                {text:'像学习vue一样带你学会jsx', link: '/React/react.md'}
+            ]
+            },
+            { text: 'Vue', 
+            items:[
+                {text:'像学习vue一样带你学会jsx', link: '/React/react.md'}
+            ]
+            },
+            { text: 'JavaScript', 
+            items:[
+                {text:'像学习vue一样带你学会jsx', link: '/React/react.md'}
+            ]
+            },
+            { text: 'Css', 
+            items:[
+                {text:'像学习vue一样带你学会jsx', link: '/React/react.md'}
+            ]
+            },
+            { text: 'Html', 
+            items:[
+                {text:'像学习vue一样带你学会jsx', link: '/React/react.md'}
+            ]
+            },
+            { text: '随便聊聊', 
+            items:[
+                {text:'像学习vue一样带你学会jsx', link: '/React/react.md'}
+            ]
+            },
         ],
     }
 }
