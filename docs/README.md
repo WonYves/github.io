@@ -1,10 +1,10 @@
 ---
 home: true
 heroImage: /ohwo.png
-heroText: WonYves
+heroText: Wiess
 tagline: 前端开发之路
 actionText: 走着 →
-actionLink: /foo
+actionLink: /React/react.md
 features:
 - title: JavaScript
   details:  前端吃饭的家伙 弱类型脚本语言 学习初期的笔记 还有一些个人理解
