@@ -25,6 +25,11 @@ module.exports = {
                 {text:'JavaScript基础', link: '/JavaScript/JavaScript.md'},
             ]
             },
+            { text: '数据结构与算法', 
+            items:[
+                {text:'数组', link: '/JavaScript/JavaScript.md'},
+            ]
+            },
             { text: 'Css', 
             items:[
                 {text:'Css基础+css3', link: '/Css/CSS.md'},

@@ -7,10 +7,10 @@ actionText: 走着 →
 actionLink: /React/react.md
 features:
 - title: JavaScript
-  details:  前端吃饭的家伙 弱类型脚本语言 学习初期的笔记 还有一些个人理解
-- title: Vue
-  details: JS轻量级渐进式框架 在国内地位和React一样占据半壁江山
+  details:  前端吃饭的家伙 弱类型高级脚本语言 
 - title: React
-  details: 构建用户界面的JavaScript库 面向国际 周边生态提供的支持 形成了一个框架
+  details: 构建用户界面的JavaScript库 基于周边生态库提供的支持 形成了一个国际的框架
+- title: 数据结构与算法
+  details: 基于JavaScript语言的数据结构与算法，包括数组，链表，哈希表，树等数据结构的算法分析。
 footer: MIT Licensed | Copyright © 2021-present WonYves | Github:https://github.com/wonyves
 ---
