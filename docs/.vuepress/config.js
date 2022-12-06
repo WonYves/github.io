@@ -1,3 +1,4 @@
+// @ts-check
 module.exports = {
     title: "Wiess's blog",
     description: '分享笔记，技术博客',
@@ -6,6 +7,7 @@ module.exports = {
             'link',{rel:'icon', href:'/ohwo.png'}
         ]
     ],
+    bgImage: '/ohwo.png',
     themeConfig: {
         nav: [
             { text: 'React', 
@@ -27,7 +29,8 @@ module.exports = {
             },
             { text: '数据结构与算法', 
             items:[
-                {text:'数组', link: '/JavaScript/JavaScript.md'},
+                {text:'数组', link: '/Algorithm/数组.md'},
+                {text:'栈和队列', link: '/Algorithm/栈和队列.md'},
             ]
             },
             { text: 'Css', 

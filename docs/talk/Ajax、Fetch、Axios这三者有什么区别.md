@@ -40,7 +40,7 @@ Ajax 是一个技术统称，是一个概念模型，它囊括了很多技术，
 ```
 这里利用 XMLHttpRequest 模块实现了一个最简单的 get 网络请求。
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/32841606/1669779630125-de8b998d-1f05-4046-aa02-cfef5a170f40.png#clientId=u9ae83971-90b5-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=153&id=u8ae04c6b&margin=%5Bobject%20Object%5D&name=image.png&originHeight=153&originWidth=797&originalType=binary&ratio=1&rotation=0&showTitle=true&size=29728&status=done&style=none&taskId=u253e75d9-3bbb-4f13-be5c-beef4416f10&title=%E6%8E%A5%E6%94%B6%E5%93%8D%E5%BA%94%E7%BB%93%E6%9E%9C&width=797 "接收响应结果")
+![image.png](/3.png "接收响应结果")
 
 我们使用这种方式实现网络请求时，如果请求内部又包含请求，以此循环，就会出现回调地狱，这也是一个诟病，后来才催生了更加优雅的请求方式。  
 ## 2.Fetch
@@ -72,7 +72,7 @@ Fetch 是一个 API，它是真实存在的，它是基于 promise 的。
   </script>
 </body>
 ```
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/32841606/1669780510626-3e532bfc-d098-44b2-ab41-37a2713157d2.png#clientId=u9ae83971-90b5-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=284&id=ub19b4a11&margin=%5Bobject%20Object%5D&name=image.png&originHeight=284&originWidth=897&originalType=binary&ratio=1&rotation=0&showTitle=true&size=38327&status=done&style=none&taskId=u6b652310-27c6-48f7-9a79-f63003efc10&title=%E6%8E%A5%E6%94%B6%E5%93%8D%E5%BA%94%E7%BB%93%E6%9E%9C&width=897 "接收响应结果")
+![image.png](/4.png "接收响应结果")
 上段代码利用 Fetch 发送了一个最简单的 get 请求，其中最重要的特点之一就是采用了.then 链式调用的方式处理结果，这样不仅利于代码的可读，而且也解决了回调地狱的问题。
 
 ## 3.AXIOS
@@ -105,7 +105,8 @@ axios({
 })
 ```
 用一张图来作总结：
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/32841606/1669780774756-36fb68d5-c9e0-4463-987f-68902c180553.png#clientId=u9ae83971-90b5-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=439&id=u60d76b60&margin=%5Bobject%20Object%5D&name=image.png&originHeight=439&originWidth=687&originalType=binary&ratio=1&rotation=0&showTitle=false&size=131993&status=done&style=none&taskId=ue38fd9df-52df-4507-8fdf-5c66ca3b432&title=&width=687)
+![image.png](/5.png)
+
 三者做个对比
 
 | Ajax | 一种技术统称，主要利用XHR实现网络请求 |
