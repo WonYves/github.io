@@ -7,7 +7,7 @@ actionText: 走着 →
 actionLink: /React/react.md
 features:
 - title: JavaScript
-  details:  前端吃饭的家伙 弱类型高级脚本语言 
+  details:  前端的饭碗 弱类型高级脚本语言 
 - title: React
   details: 构建用户界面的JavaScript库 基于周边生态库提供的支持 形成了一个国际的框架
 - title: 数据结构与算法
