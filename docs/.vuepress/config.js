@@ -14,6 +14,8 @@ module.exports = {
             items:[
                 {text:'React基础语法', link: '/React/react.md'},
                 {text:'React-Hooks', link: '/React/hook.md'},
+                {text:'Redux', link: '/React/Redux.md'},
+                {text:'React-Router', link: '/React/React-Router.md'},
                 {text:'react-hooks中的过期闭包问题', link: '/talk/react-hooks中的过期闭包问题.md'},
             ]
             },
