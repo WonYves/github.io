@@ -27,6 +27,8 @@ module.exports = {
             { text: 'JavaScript', 
             items:[
                 {text:'JavaScript', link: '/JavaScript/JavaScript.md'},
+                {text:'浅拷贝和深拷贝', link: '/JavaScript/浅拷贝和深拷贝.md'},
+                {text:'事件循环EventLoop', link: '/JavaScript/事件循环Eventloop.md'},
                 {text:'TypeScript', link: '/JavaScript/TypeScript.md'},
             ]
             },
