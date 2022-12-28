@@ -26,7 +26,14 @@ module.exports = {
             },
             { text: 'JavaScript', 
             items:[
-                {text:'JavaScript基础', link: '/JavaScript/JavaScript.md'},
+                {text:'JavaScript', link: '/JavaScript/JavaScript.md'},
+                {text:'TypeScript', link: '/JavaScript/TypeScript.md'},
+            ]
+            },
+            { text: 'WebPack', 
+            items:[
+                {text:'WebPack入门基础', link: '/WebPack/WebPack.md'},
+                {text:'WebPack面试题', link: '/WebPack/WebPack面试题.md'},
             ]
             },
             { text: '数据结构与算法', 
