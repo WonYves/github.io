@@ -29,6 +29,7 @@ module.exports = {
                 {text:'JavaScript', link: '/JavaScript/JavaScript.md'},
                 {text:'浅拷贝和深拷贝', link: '/JavaScript/浅拷贝和深拷贝.md'},
                 {text:'事件循环EventLoop', link: '/JavaScript/事件循环Eventloop.md'},
+                {text:'重绘回流(重排)', link: '/JavaScript/重绘回流.md'},
                 {text:'TypeScript', link: '/JavaScript/TypeScript.md'},
             ]
             },
