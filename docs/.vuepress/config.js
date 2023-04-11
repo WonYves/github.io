@@ -44,6 +44,7 @@ module.exports = {
                 {text:'Vue2-文章后台管理系统', link: '/个人项目/Vue2-文章后台管理系统.md'},
                 {text:'Vue2-MovieShop', link: '/个人项目/Vue2-MovieShop.md'},
                 {text:'Yi-MiniShop', link: '/个人项目/Yi-MiniShop.md'},
+                {text:'Netease-Cloud-Music(完成中)', link: '/个人项目/Netease-Cloud-Music.md'},
             ]
             },
             { text: '随便聊聊', 
