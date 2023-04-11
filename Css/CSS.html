@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CSS | Wiess&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/ohwo2.jpg">
+    <meta name="description" content="分享笔记，技术博客">
+    
+    <link rel="preload" href="/assets/css/0.styles.d6ad21ed.css" as="style"><link rel="preload" href="/assets/js/app.47b00d9e.js" as="script"><link rel="preload" href="/assets/js/2.63c13255.js" as="script"><link rel="preload" href="/assets/js/9.f8d4bff4.js" as="script"><link rel="prefetch" href="/assets/js/10.6f45d255.js"><link rel="prefetch" href="/assets/js/11.f8205a47.js"><link rel="prefetch" href="/assets/js/12.bd1b258c.js"><link rel="prefetch" href="/assets/js/13.d54cd060.js"><link rel="prefetch" href="/assets/js/14.9ccbfb79.js"><link rel="prefetch" href="/assets/js/15.8a848db8.js"><link rel="prefetch" href="/assets/js/16.bbee7035.js"><link rel="prefetch" href="/assets/js/17.a77f7b7a.js"><link rel="prefetch" href="/assets/js/18.2505abdc.js"><link rel="prefetch" href="/assets/js/19.3b9dec56.js"><link rel="prefetch" href="/assets/js/20.fbcc61e3.js"><link rel="prefetch" href="/assets/js/21.76693485.js"><link rel="prefetch" href="/assets/js/22.015311e2.js"><link rel="prefetch" href="/assets/js/23.4965c38b.js"><link rel="prefetch" href="/assets/js/24.7d8fcfee.js"><link rel="prefetch" href="/assets/js/25.1fad7845.js"><link rel="prefetch" href="/assets/js/26.78bfc509.js"><link rel="prefetch" href="/assets/js/27.4ccd57ee.js"><link rel="prefetch" href="/assets/js/28.f9057288.js"><link rel="prefetch" href="/assets/js/29.ebde7145.js"><link rel="prefetch" href="/assets/js/3.a4d9c696.js"><link rel="prefetch" href="/assets/js/30.30876a1e.js"><link rel="prefetch" href="/assets/js/31.6b81c6bf.js"><link rel="prefetch" href="/assets/js/32.37b3d365.js"><link rel="prefetch" href="/assets/js/33.f2cc1a34.js"><link rel="prefetch" href="/assets/js/34.c3864ec8.js"><link rel="prefetch" href="/assets/js/35.d8109eef.js"><link rel="prefetch" href="/assets/js/36.964f8786.js"><link rel="prefetch" href="/assets/js/37.97f0ce0a.js"><link rel="prefetch" href="/assets/js/38.0fab69ca.js"><link rel="prefetch" href="/assets/js/4.94733d25.js"><link rel="prefetch" href="/assets/js/5.2ea06e07.js"><link rel="prefetch" href="/assets/js/6.8d81f0ec.js"><link rel="prefetch" href="/assets/js/7.1e08345a.js"><link rel="prefetch" href="/assets/js/8.0d63082f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d6ad21ed.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Wiess's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="React" class="dropdown-title"><span class="title">React</span> <span class="arrow down"></span></button> <button type="button" aria-label="React" class="mobile-dropdown-title"><span class="title">React</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/React/react.html" class="nav-link">
+  React基础语法
+</a></li><li class="dropdown-item"><!----> <a href="/React/hook.html" class="nav-link">
+  React-Hooks
+</a></li><li class="dropdown-item"><!----> <a href="/React/Redux.html" class="nav-link">
+  Redux
+</a></li><li class="dropdown-item"><!----> <a href="/React/React-Router.html" class="nav-link">
+  React-Router
+</a></li><li class="dropdown-item"><!----> <a href="/React/深入理解Redux.html" class="nav-link">
+  深入理解Redux
+</a></li><li class="dropdown-item"><!----> <a href="/React/Immutable.html" class="nav-link">
+  Immutable
+</a></li><li class="dropdown-item"><!----> <a href="/React/RouterV6.html" class="nav-link">
+  RouterV6
+</a></li><li class="dropdown-item"><!----> <a href="/talk/react-hooks中的过期闭包问题.html" class="nav-link">
+  react-hooks中的过期闭包问题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vue" class="mobile-dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Vue/Vue双向绑定原理.html" class="nav-link">
+  Vue双向绑定
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript" class="dropdown-title"><span class="title">JavaScript</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript" class="mobile-dropdown-title"><span class="title">JavaScript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/JavaScript/JavaScript.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/浅拷贝和深拷贝.html" class="nav-link">
+  浅拷贝和深拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/事件循环Eventloop.html" class="nav-link">
+  事件循环EventLoop
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/重绘回流.html" class="nav-link">
+  重绘回流(重排)
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/call、apply、bind方法.html" class="nav-link">
+  call、apply、bind方法
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/TypeScript.html" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/talk/Ajax、Fetch、Axios这三者有什么区别.html" class="nav-link">
+  Ajax、Fetch、Axios这三者有什么区别
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人项目" class="dropdown-title"><span class="title">个人项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人项目" class="mobile-dropdown-title"><span class="title">个人项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/个人项目/ReactEvents.html" class="nav-link">
+  ReactEvents
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Vue2-文章后台管理系统.html" class="nav-link">
+  Vue2-文章后台管理系统
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Vue2-MovieShop.html" class="nav-link">
+  Vue2-MovieShop
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Yi-MiniShop.html" class="nav-link">
+  Yi-MiniShop
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Netease-Cloud-Music.html" class="nav-link">
+  Netease-Cloud-Music(完成中)
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="随便聊聊" class="dropdown-title"><span class="title">随便聊聊</span> <span class="arrow down"></span></button> <button type="button" aria-label="随便聊聊" class="mobile-dropdown-title"><span class="title">随便聊聊</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Css/CSS.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Css基础+css3
+</a></li><li class="dropdown-item"><!----> <a href="/Css/css属性.html" class="nav-link">
+  Css常用属性
+</a></li><li class="dropdown-item"><!----> <a href="/WebPack/WebPack.html" class="nav-link">
+  WebPack入门基础
+</a></li><li class="dropdown-item"><!----> <a href="/WebPack/WebPack面试题.html" class="nav-link">
+  WebPack面试题
+</a></li><li class="dropdown-item"><!----> <a href="/talk/talk.html" class="nav-link">
+  高频面试题
+</a></li><li class="dropdown-item"><!----> <a href="/talk/git.html" class="nav-link">
+  git使用
+</a></li><li class="dropdown-item"><!----> <a href="/talk/小程序.html" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/talk/uniapp购物车.html" class="nav-link">
+  uniapp购物车
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="React" class="dropdown-title"><span class="title">React</span> <span class="arrow down"></span></button> <button type="button" aria-label="React" class="mobile-dropdown-title"><span class="title">React</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/React/react.html" class="nav-link">
+  React基础语法
+</a></li><li class="dropdown-item"><!----> <a href="/React/hook.html" class="nav-link">
+  React-Hooks
+</a></li><li class="dropdown-item"><!----> <a href="/React/Redux.html" class="nav-link">
+  Redux
+</a></li><li class="dropdown-item"><!----> <a href="/React/React-Router.html" class="nav-link">
+  React-Router
+</a></li><li class="dropdown-item"><!----> <a href="/React/深入理解Redux.html" class="nav-link">
+  深入理解Redux
+</a></li><li class="dropdown-item"><!----> <a href="/React/Immutable.html" class="nav-link">
+  Immutable
+</a></li><li class="dropdown-item"><!----> <a href="/React/RouterV6.html" class="nav-link">
+  RouterV6
+</a></li><li class="dropdown-item"><!----> <a href="/talk/react-hooks中的过期闭包问题.html" class="nav-link">
+  react-hooks中的过期闭包问题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vue" class="mobile-dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Vue/Vue双向绑定原理.html" class="nav-link">
+  Vue双向绑定
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript" class="dropdown-title"><span class="title">JavaScript</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript" class="mobile-dropdown-title"><span class="title">JavaScript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/JavaScript/JavaScript.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/浅拷贝和深拷贝.html" class="nav-link">
+  浅拷贝和深拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/事件循环Eventloop.html" class="nav-link">
+  事件循环EventLoop
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/重绘回流.html" class="nav-link">
+  重绘回流(重排)
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/call、apply、bind方法.html" class="nav-link">
+  call、apply、bind方法
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/TypeScript.html" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/talk/Ajax、Fetch、Axios这三者有什么区别.html" class="nav-link">
+  Ajax、Fetch、Axios这三者有什么区别
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人项目" class="dropdown-title"><span class="title">个人项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人项目" class="mobile-dropdown-title"><span class="title">个人项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/个人项目/ReactEvents.html" class="nav-link">
+  ReactEvents
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Vue2-文章后台管理系统.html" class="nav-link">
+  Vue2-文章后台管理系统
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Vue2-MovieShop.html" class="nav-link">
+  Vue2-MovieShop
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Yi-MiniShop.html" class="nav-link">
+  Yi-MiniShop
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Netease-Cloud-Music.html" class="nav-link">
+  Netease-Cloud-Music(完成中)
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="随便聊聊" class="dropdown-title"><span class="title">随便聊聊</span> <span class="arrow down"></span></button> <button type="button" aria-label="随便聊聊" class="mobile-dropdown-title"><span class="title">随便聊聊</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Css/CSS.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Css基础+css3
+</a></li><li class="dropdown-item"><!----> <a href="/Css/css属性.html" class="nav-link">
+  Css常用属性
+</a></li><li class="dropdown-item"><!----> <a href="/WebPack/WebPack.html" class="nav-link">
+  WebPack入门基础
+</a></li><li class="dropdown-item"><!----> <a href="/WebPack/WebPack面试题.html" class="nav-link">
+  WebPack面试题
+</a></li><li class="dropdown-item"><!----> <a href="/talk/talk.html" class="nav-link">
+  高频面试题
+</a></li><li class="dropdown-item"><!----> <a href="/talk/git.html" class="nav-link">
+  git使用
+</a></li><li class="dropdown-item"><!----> <a href="/talk/小程序.html" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/talk/uniapp购物车.html" class="nav-link">
+  uniapp购物车
+</a></li></ul></div></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="css"><a href="#css" class="header-anchor">#</a> CSS</h3> <div class="language-css extra-class"><pre class="language-css"><code>层叠样式表<span class="token punctuation">(</span>英文全称：Cascading Style Sheets<span class="token punctuation">)</span>
+现标准语言在网页中主要对网页信息的显示进行控制，简单来说就是如何修饰网页信息的显示样式。
+目前推荐遵循的是W3C发布的CSS3.0.
+用来表现XHTML或者XML等样式文件的计算机语言。
+1998年5月21日由W3C正式推出的CSS2.0
+</code></pre></div><h4 id="css语法"><a href="#css语法" class="header-anchor">#</a> CSS语法：</h4> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">1. 每个CSS样式由两部分组成，即选择符和声明，声明又分为属性和属性值；
+2. 属性必须放在花括号</span><span class="token punctuation">{</span><span class="token punctuation">}</span>中，属性与属性值用冒号：连接。
+3. 每条声明用分号；结束。
+4. 当一个属性有多个属性值的时候，属性值与属性值不分先后顺序，用空格隔开。
+5. 在书写样式过程中，空格、换行等操作不影响属性显示。
+</code></pre></div><div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">CSS内部样式：
+Stlye（样式） 为 html标签
+&lt;Style&gt; h1</span><span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span>pink<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token selector">&lt;/style&gt; 选择符</span><span class="token punctuation">{</span>属性：属性值；<span class="token punctuation">}</span>
+CSS外部样式：
+
+单标签
+
+&lt;link rerl=”stylesheet” type=”text/css” href=”css文件的路径”/&gt; 
+Type=”text/css”的用处：告诉浏览器，这段标签内包含的内容是css或text；也就是说如果某种浏览器（特别是wap等手机浏览器）不能识别css的，会将代码认为text，从而不显示也不报错。
+
+双标签
+&lt;Style&gt; <span class="token atrule"><span class="token rule">@import</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>“css文件的路径”<span class="token punctuation">)</span></span><span class="token punctuation">;</span></span>&lt;/style&gt;
+@import-导入 引入 
+Link属于XHTML标签 引用的CSS会同时被加载，@import较慢
+@import完全是CSS提供的一种方式老浏览器不支持，IE5以上的才能识别，Link标签无此问题，都支持
+CSS行内样式：
+&lt;h1 style=<span class="token string">&quot;color:【颜色】;&quot;</span>&gt;【文本】&lt;/h1&gt;
+</code></pre></div><p>优先级：外部样式&lt;内部样式&lt;行内样式 important 最高优先级</p> <p><strong>CSS选择器</strong>
+为什么要选择器？要是用CSS对HTML页面中的元素实现1对1,1对多或者多对1的控制，这就需要用到CSS选择器</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">Class选择器/类别选择器
+语法：.class名</span><span class="token punctuation">{</span>属性：属性值；<span class="token punctuation">}</span>
+<span class="token selector">说明：
+1. 当我们选择使用class选择符时，应先为每一个元素定义一个class名称
+2. Class选择符的语法格式是：
+如：&lt;div class=”top”&gt;&lt;/div&gt;
+.top</span><span class="token punctuation">{</span>width=200px<span class="token punctuation">;</span><span class="token property">height</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span><span class="token property">background</span><span class="token punctuation">:</span>green<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">用法：class选择符更适合定义一类样式；
+
+
+Id选择器
+语法：#id名</span><span class="token punctuation">{</span>属性：属性值；<span class="token punctuation">}</span>
+<span class="token selector">说明：
+1. 当我们使用id选择符时，应该喂每个元素定义一个id属性 如：&lt;div id=”box”&gt;&lt;/div&gt;
+2. id选择符的语法格式是”#”加上自定义的id名
+如：#box</span><span class="token punctuation">{</span><span class="token property">width</span><span class="token punctuation">:</span>300px<span class="token punctuation">;</span><span class="token property">height</span><span class="token punctuation">:</span>300px<span class="token punctuation">}</span>
+<span class="token selector">3、起名时要取英文名，不能用关键字：（所有的标记和属性都是关键字）如：head标记
+4、一个id名称只能对应文档中一个具体的元素对象。（唯一性）
+
+
+*通配符/选择器
+语法：*</span><span class="token punctuation">{</span>属性：属性值；<span class="token punctuation">}</span>
+<span class="token selector">说明：通配选择符的写法是”*”，其含义就是所有元素。
+*</span><span class="token punctuation">{</span><span class="token property">margin</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span><span class="token property">padding</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token selector">代表清除所有元素的默认边距值和填充值；
+群组选择器
+语法：选择符1，选择符2，选择符3......</span><span class="token punctuation">{</span>属性：属性值；<span class="token punctuation">}</span>
+<span class="token selector">例：#top1，#nav1，h1</span><span class="token punctuation">{</span><span class="token property">width</span><span class="token punctuation">:</span>960px<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">说明：当有多个选择符应用相同的声明时，可以将选择符用”,”分隔的方式，合并为一组。
+margin：0 atuo；实现盒子的水平居中
+
+
+包含选择器/后代选择器
+语法：选择符1 选择符2</span><span class="token punctuation">{</span>属性：属性值；<span class="token punctuation">}</span>
+<span class="token selector">说明：含义就是选择符1中包含的所有选择符2； 
+用法：当我的元素存在父级元素的时候，我要改变自己本身的样式，可以不另加选择符，
+直接用包含选择符的方式解决。 
+如：结构&lt;ul class=”list”&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+样式：.list li</span><span class="token punctuation">{</span><span class="token property">background</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span><span class="token punctuation">}</span>
+
+
+<span class="token selector">伪类选择器 最常用是给a链接使用
+语法：
+a:link</span><span class="token punctuation">{</span>属性：属性值；<span class="token punctuation">}</span><span class="token selector">超链接的初始状态；
+a:visited</span><span class="token punctuation">{</span>属性：属性值；<span class="token punctuation">}</span><span class="token selector">超链接被访问后的状态；
+a:hover</span><span class="token punctuation">{</span>属性：属性值；<span class="token punctuation">}</span><span class="token selector">鼠标悬停，即鼠标划过超连接时的状态；
+a:active</span><span class="token punctuation">{</span>属性：属性值；<span class="token punctuation">}</span><span class="token selector">超链接被激活时的状态，即鼠标按下时超链接的状态
+Link--visited--hover--active。
+说明：
+1. 当这4个超链接伪类选择符联合使用时，应注意他们的顺序，正常顺序为：
+a:link,a:visited,a:0hover,a:active,  错误的顺序有时会使超链接的样式失效；
+2. 为了简化代码，可以把伪类选择符中相同的声明提出来放在a选择符中；
+例如：a</span><span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token selector">a:hover</span><span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span>green<span class="token punctuation">;</span><span class="token punctuation">}</span>表示超链接的初始和访问过后的状态一样，鼠标划过的状态和点击时的状态一样。 
+
+
+选择器的权重
+当多个选择器，选中的是一个元素，且都为他们定义了样式，如果属性发生冲突了，会选择权重高的来执行。
+Important&gt;内联样式&gt;包含选择符&gt;Id&gt;class&gt;元素
+</code></pre></div><p>**CSS文本属性 **</p> <div class="language-css extra-class"><pre class="language-css"><code>Font-size 字体大小 单位是PX，浏览器默认是16px，设计图常用字号是12px。
+Font-family 字体 谷歌浏览器默认微软雅黑 
+当字体是中文字体、英文字体中有空格时，需加双引号；
+多个字体中间用逗号链接，先解析第一个字体，如果没有解析第二个字体，以此类推
+Font-weight 文本加粗 100细体 400正常 700加粗 900最粗
+【lighter 更轻的】【normal 正常的】【bold粗的 bolder更粗】
+Font-style 文本倾斜 <span class="token function">italic</span><span class="token punctuation">(</span>斜字体<span class="token punctuation">)</span> <span class="token function">oblique</span><span class="token punctuation">(</span>倾斜的文字<span class="token punctuation">)</span>/<span class="token function">normal</span><span class="token punctuation">(</span>常规显示<span class="token punctuation">)</span> 
+Text-align 文本水平对齐 left right center 【justify 水平2端对齐】.
+Line-height 行高 line-height的数据=height的数据，可以实现单行文本垂直居中
+Text-indent 首行缩进 text-indent可以取负值；text-indent属性只对第一行起作用 text-indent：可使用单位px<span class="token punctuation">,</span>em；
+Letter-spacing 字符间距 控制文字和文字之间的间距用于中文
+word-spacing 词间距 控制单词和单词之间的间距用于英文
+Text-decoration text-decoration：none  没有/uderline下划线/overline上划线/line-through删除线
+Font 文字简写font是 font-style font-weight font-size/line-height <span class="token property">font-famiy的简写Font</span><span class="token punctuation">:</span>italic 800/bold 30px/80px”宋体”，顺序不能改变，必须同时指定font-size和font-family属性时才起作用
+Text-transform 文本变形 检索大小写 
+capitalize 单词首字母全部大写
+lowercase 整个文本单词全部小写 
+Upercase  整个文本单词全部大写
+</code></pre></div><p><strong>CSS列表属性</strong></p> <div class="language-css extra-class"><pre class="language-css"><code>List-style-type：
+定义列表符合样式 list-style-type
+disc（实心圆）/circle（空心圆）/square（实心方块）/none（去掉符号）
+List-style-image：
+将图片设置为列表符合样式 <span class="token property">List-style-image</span><span class="token punctuation">:</span><span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+List-style-position： 
+设置列表标记的放置位置。
+List-style-position：outside<span class="token punctuation">;</span>列表的外面 默认值
+List-style-position：inside<span class="token punctuation">;</span>列表的里面
+List-style：简写 List-style：none；去除列表符号
+</code></pre></div><p><strong>CSS背景属性</strong></p> <div class="language-css extra-class"><pre class="language-css"><code>background-color 背景颜色 background-color：red；
+background-image 背景图片 <span class="token property">background-image</span><span class="token punctuation">:</span><span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>图片<span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+background-repeat 背景图片的平铺： 
+<span class="token property">background-repeat</span><span class="token punctuation">:</span>no-repeat/repeat/repeat-x/repeat-y；
+<span class="token comment">/* repeat：默认平铺
+ repeat-x x轴平铺 
+ repeat-y y轴平铺
+ no-repeat 不平铺*/</span>
+background-position背景图片的定位
+background-position：水平位置 垂直位置；可以给负值
+ <span class="token comment">/* 1.20px 20px 
+ 2.10% 10%
+ 3.left center right
+ top center bottom*/</span>
+Background-size 背景图片的大小 
+ <span class="token comment">/*
+ 1.400px 400
+ 2.100% 100%
+ 3.cover:背景图片图像扩展至足够大，以使背景图像完全覆盖背景区域
+ 4.contain：把图像扩展至最大尺寸，以使其宽度和高度完全适应内容区域。铺不满盒子，留白
+ */</span>
+background-attachment背景图片的固定
+<span class="token property">background-attachment</span> <span class="token punctuation">:</span> scroll <span class="token punctuation">(</span>滚动<span class="token punctuation">)</span>/ fixed（固定，固定在浏览器窗口里面，固定之后就相对于浏览器窗口了） <span class="token punctuation">;</span>
+Background属性复合写法：
+1. 用空格隔开
+2. 顺序可以换
+3. 只可以取一个值，放在后面能覆盖前面的值
+4. Background-size属性只能单独用
+</code></pre></div><p><strong>CSS浮动</strong></p> <div class="language-css extra-class"><pre class="language-css"><code>浮动属性
+1.folat 描述：float：left<span class="token punctuation">;</span> 元素靠左边浮动
+2.folat 描述：float：right<span class="token punctuation">;</span> 元素靠右边浮动
+3.folat 描述：float：none<span class="token punctuation">;</span> 元素不浮动
+浮动的作用1：定义网页中其他文本如何环绕该元素显示
+浮动的作用2：就是让竖着的东西横着过来
+清浮动
+Clear：none；允许有浮动对象 
+clear：right； 不允许右边有浮动对象 
+clear：left；不允许左边有浮动对象 
+clear：both； 不允许有浮动对象 清楚浮动只是改变元素的排列方式，该元素还是漂浮着，不占据文档位置。
+</code></pre></div><p>**CSS盒子 **
+盒模型是CSS布局的基石，它规定了网页元素如何显示以及元素间相互关系。Css定义所有的元素都可以拥有像盒子一样的外形和平面空间，即都包含边框、边界、补白、内容区这就是盒模型。
+<img src="https://cdn.nlark.com/yuque/0/2022/png/32841606/1669706247541-66e0c931-ed3e-4cac-a03d-d99a72056925.png#clientId=ucf7f893f-aa08-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=uea534d84&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=349&amp;originWidth=583&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=125285&amp;status=done&amp;style=none&amp;taskId=u447bf7d1-d073-441f-bf8a-272b7fd32a6&amp;title=" alt="image.png">
+编辑
+添加图片注释，不超过 140 字（可选）</p> <div class="language-css extra-class"><pre class="language-css"><code>padding：内边距 <span class="token property">单位</span><span class="token punctuation">:</span>PX 不支持负数
+1个值，4个方向都一样
+2个值，上下，左右
+3个值，上，左右，下
+4个值，上，右，左，下 顺时针
+背景色蔓延到内边距 
+可以设置单一方向
+Padding-方向：top left right bottom
+Border：边框 单位PX 不支持负数
+背景色能蔓延到边框
+可以设置单一方向
+Border-方向：top left right bottom
+样式：
+Solid（实线） double（双实线） 
+dashed（线段线） dotted（点状线）
+border-width 边框宽度 border-color 边框颜色 border-style 边框样式
+Transparent 透明的
+Margin：外边距 单位PX 
+支持负数
+可以设置单一方向
+背景色无法蔓延到外边距
+<span class="token property">屏幕居中？Margin</span><span class="token punctuation">:</span>0 auto<span class="token punctuation">;</span> 横向居中方案
+Margin-方向：top left right bottom
+</code></pre></div><p>**特性问题： **</p> <ol><li>兄弟关系，两个盒子垂直外边距与水平外边距问题 垂直方向：外边距取最大值，水平方向：外边距合并处理。</li> <li>父子关系，给子加外边距，但作用于父身上了，怎么解决</li></ol> <p>子margin-top===&gt;父的padding-top，注意高度计算;
+给父盒子设置边框;加浮动;Overflow：hidden.BFC。</p> <p><strong>溢出属性（容器的）</strong></p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token property">Overflow</span><span class="token punctuation">:</span>visible/hidden/scroll/auto/inherit<span class="token punctuation">;</span>
+<span class="token property">Visible</span><span class="token punctuation">:</span>默认值，溢出内容会显示在元素之外；
+<span class="token property">Hidden</span><span class="token punctuation">:</span>溢出内容隐藏； 
+<span class="token property">Scroll</span><span class="token punctuation">:</span>滚动，溢出内容以滚动方式显示；【滚动条】
+<span class="token property">Auto</span><span class="token punctuation">:</span>如果有溢出会添加滚动条，没有溢出正常显示；
+<span class="token property">Inherit</span><span class="token punctuation">:</span>规定应该遵从父元素继承overflow属性的值。
+Overflow-x：X轴溢出； overflow-y：Y轴溢出
+</code></pre></div><p><strong>空余空间：</strong></p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token property">White-space</span><span class="token punctuation">:</span> normal/nowrap/pre/pre-wrap/pre-line/inherit 
+该属性用来设置如何处理元素内的空白；
+Normal：默认值，空白会被浏览器忽略，
+Nowrap：文本不会换行，文本会在同一行上继续，直到遇到&lt;br/&gt;标签为止；
+Pre：显示空格，回车，不换行
+Pre-warp：显示空格，回车，换行
+Pre-line：显示回车，不显示空格，换行
+</code></pre></div><p><strong>省略号显示：</strong></p> <div class="language-css extra-class"><pre class="language-css"><code>Text-overflow：clip<span class="token punctuation">;</span> 默认裁切
+Text-overflow：ellipsis 显示省略标记
+当单行文本溢出省略号需要同时设置以下声明：
+1. 容器宽度：width：200px；
+2. 强制文本在一行显示：white-space：nowarp；
+3. 溢出内容为隐藏：overflow：hidden；
+4. 溢出文本显示省略号：text-overflow：ellipsis；
+</code></pre></div><p><strong>元素类型的分类</strong></p> <div class="language-css extra-class"><pre class="language-css"><code>块元素  <span class="token property">display</span><span class="token punctuation">:</span>block<span class="token punctuation">;</span>
+</code></pre></div><p><img src="https://cdn.nlark.com/yuque/0/2022/png/32841606/1669706247573-7e7ff4b6-8118-4d2c-9b1c-76891bcd80a3.png#clientId=ucf7f893f-aa08-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=u45a8e2d0&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=470&amp;originWidth=408&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=123726&amp;status=done&amp;style=none&amp;taskId=u4b6b2bd3-b029-4f38-b20f-ec47d4fc82d&amp;title=" alt="image.png">
+编辑
+添加图片注释，不超过 140 字（可选）</p> <div class="language-css extra-class"><pre class="language-css"><code>列如：div p ul li ol li dl dt dd h1-h6等矩阵区域 自上而下排序 可以定义自己的宽度和高度 
+作为其他元素的容器存在，比喻为一个盒子。
+
+
+块元素：
+<span class="token property">display</span><span class="token punctuation">:</span>block<span class="token punctuation">;</span> 
+<span class="token property">display</span><span class="token punctuation">:</span>list-item<span class="token punctuation">;</span>
+P标签可以放文本，不能放块级元素
+</code></pre></div><p><strong>行内（内联）元素</strong> <img src="https://cdn.nlark.com/yuque/0/2022/png/32841606/1669706247543-37189419-d9d4-47fa-b753-998c21f9b140.png#clientId=ucf7f893f-aa08-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=ue224ce2e&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=479&amp;originWidth=395&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=110155&amp;status=done&amp;style=none&amp;taskId=uf5afb0a2-9392-44c2-93bc-4b29e437e05&amp;title=" alt="image.png">
+编辑
+添加图片注释，不超过 140 字（可选）</p> <div class="language-css extra-class"><pre class="language-css"><code>例如：a链接 b i span strong等 横着排 不能定义它的宽和高。
+<span class="token property">行内元素：display</span><span class="token punctuation">:</span>inline
+行内块元素：
+内联块状元素（inline-block）就是同时具备内联元素，块状元素的特点 例如：img input等
+<span class="token property">display</span><span class="token punctuation">:</span>inline-block
+盒子模型的影响
+Span一类的 行内元素 只能设置边距的左右边距 不能设置上下边距
+Img input 行内块支持边距设置
+</code></pre></div><p><strong>定位</strong></p> <div class="language-css extra-class"><pre class="language-css"><code>Position 偏移位置（top left right bottom）时候的参照物
+<span class="token property">Position</span><span class="token punctuation">:</span>static 默认值 默认 从左到右 从上到下 
+<span class="token property">Position</span><span class="token punctuation">:</span>absolute 绝对定位 脱离文档流 可以将行内元素转换为块元素
+1. 当没有父元素或者父元素没有定位，参照物是浏览器窗口的第一屏 
+2、有父元素且父元素有定位，父元素为参照。 
+<span class="token property">Position</span><span class="token punctuation">:</span>relative 相对定位 不脱离文档流 自己的初始位置 根据原本的位置进行调整位置 
+<span class="token property">Position</span><span class="token punctuation">:</span>fixed 固定定位 脱离文档流 浏览器的当前窗口 如何滚动都不会改变当前位置
+<span class="token property">Position</span><span class="token punctuation">:</span>sticky 粘性定位 可以做吸顶效果 粘性定位是CSS3.0新增加的，兼容不好
+
+定位里的层级：后来者居上
+<span class="token property">z-index</span><span class="token punctuation">:</span>数值；
+
+绝对定位 父子关系中 <span class="token property">给子盒子设置z-index</span><span class="token punctuation">:</span>负数值；可满足父盒子覆盖子盒子
+
+水平垂直居中： <span class="token property">使用Position</span><span class="token punctuation">:</span>absolute 绝对定位后
+再添加margin-left：盒子宽度一半的负值及margin-top盒子高度一半的负值 即可演变为绝对垂直居中。
+
+浮动和定位的区别：
+Float：半脱离文档流，文字环绕效果
+Absolute：全脱离，不会出现文字环绕效果
+锚点作用：页面不同区域的跳转，使用a链接
+&lt;a herf=<span class="token string">'#锚点名字'</span>&gt;&lt;/a&gt;
+&lt;div id=<span class="token string">'锚点名字'</span>&gt;&lt;/div&gt;
+</code></pre></div><p><strong>CSS Sprites的原理（图片整合技术）（CSS精灵）/雪碧图</strong></p> <div class="language-css extra-class"><pre class="language-css"><code>1. 将导航背景图片，按钮背景图片等有规则的合并成一张背景图，即将多张图片合为一张整图，
+然后用background-position来实现背景图片的定位技术。
+2. 图片整合的优势：
+3. 通过图片整合来减少对服务器的请求次数，从而提交面的加载速度。
+4. 通过整合图片来减小图片的体积。
+</code></pre></div><p><strong>宽高自适应</strong></p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">自适应：
+网页布局中经常要定义元素的宽和高。但很多时候我们希望元素的大小能够根据窗子或子元素自动调整，这就是自适应。
+ 宽度自适应：元素宽度的默认值为auto 不写或者是auto 就是自适应 主要运用于导航栏 通栏布局
+ 高度自适应：元素高度的默认值为</span><span class="token punctuation">{</span>height：auto<span class="token punctuation">}</span>
+<span class="token selector">·min-height 最小高度·max-height 最大高度
+·min-width 最小宽度·max-width 最大宽度
+
+浮动元素的高度自适应
+父元素不写高度时，子元素写了浮动后，父元素会发生高度塌陷
+
+方法1：给父元素添加声明overflow：hidden；（缺点会隐藏溢出元素）
+
+方法2：在浮动元素下方添加空块元素，并给该元素添加声明：clear：both； height：00； overflow：hidden； （缺点：在结构里增加了空的标签，不利于代码可读性，且降低了浏览器的性能）
+
+方法3：万能清浮动法
+内容清除浮动设置为块级元素宽高设置为0不显示但是占位隐藏
+
+选择符：
+after</span><span class="token punctuation">{</span><span class="token property">content</span><span class="token punctuation">:</span>”**”<span class="token punctuation">;</span> 
+<span class="token property">clear</span><span class="token punctuation">:</span>both<span class="token punctuation">;</span> 
+<span class="token property">display</span><span class="token punctuation">:</span>block<span class="token punctuation">;</span>
+<span class="token property">Width</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span>
+<span class="token property">height</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span>
+<span class="token property">visibility</span><span class="token punctuation">:</span><span class="token property">hidden；或者overflow</span><span class="token punctuation">:</span>hidden<span class="token punctuation">;</span><span class="token punctuation">}</span> 
+
+<span class="token selector">display:none 不占位隐藏
+visibility：hidden 占位隐藏
+伪元素标准写法需要用上两个冒号</span><span class="token punctuation">{</span>：：<span class="token punctuation">}</span>
+</code></pre></div><p><strong>窗口自适应</strong>：</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">盒子根据窗口的大小进行改变 设置方法
+Html,body</span><span class="token punctuation">{</span><span class="token property">height</span><span class="token punctuation">:</span>100%<span class="token punctuation">}</span>
+<span class="token function">Calc</span><span class="token punctuation">(</span><span class="token punctuation">)</span>函数的使用：
+<span class="token function">Calc</span><span class="token punctuation">(</span><span class="token punctuation">)</span>函数：用于动态计算长度值。
+需要注意的是，运算符前后都需要保留一个空格，列如：
+width：calc（100%-10px）<span class="token punctuation">;</span>
+任何长度值都可以使用calc（）函数进行计算；
+Calc（）函数支持“+”“-”“*”“/”运算；
+Calc（）函数使用标准的数学运算优先级规则。
+</code></pre></div><h2 id="css3"><a href="#css3" class="header-anchor">#</a> CSS3</h2> <div class="language-css extra-class"><pre class="language-css"><code>一、CSS3的概念和优势
+CSS3是css技术的升级版本，CSS3语言开发朝着模块化发展的。
+以前的规范作为一个模块实在太庞大而且比较复杂，所以把它分解为一些小的模块，
+更多新的模块也被加入进来。这些模块包快：盒子模型、列表模块、超链接方式、语言模块、
+背景和边框、文字特效、多栏布局等。
+Css3的优点：CSS3将完全向后兼容，所以没有必要修改现在的设计让他们来继续运作。
+网络浏览器也还将继续支持CSS2。对我们来说，CSS3主要的影响是将可以使用新的可用的选择器和属性，
+这些会允许实现新的设计效果（譬如动态和渐变），而且可以很简单的设计出现在的设计效果（比如使用分栏）
+</code></pre></div><ol><li>渐进增强和优雅降级</li></ol> <div class="language-css extra-class"><pre class="language-css"><code>渐进增强progerssive enhancement
+针对低版本的浏览进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、
+交互等改进和追加功能达到更好的用户体验
+
+优雅降级 graceful degradation 
+一开始就构建完整的功能，然后再针对低版本浏览器进行兼容
+区别：优雅降级是从复杂的现状，并试图减少用户体验的供给，而渐进增则是从一个非常基础的，
+能够起作用的版本开始，并不断扩充，以适应未来环境的需要。降级（功能衰减）意味着往回看；
+而渐进增强意味着朝前看，同时保证其根基处于安全地带。
+</code></pre></div><p><strong>选择器</strong></p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">层级选择器： 例如 .box+li</span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token selector">.box~li</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
++ 当前元素的后面第一个兄弟 加上属性
+~ 当前元素的后面所有的兄弟 加上属性
+
+属性选择器： 列如div[class] p[class]
+以[]中括号的方式选择 
+格式：标签[属性] 列如input[name] 
+class~=box1 包含就匹配选择
+
+模糊匹配：
+class^=b 以这个开头的 
+Class$=b 以这个结尾的
+Class*=b 包含某个字符的
+</code></pre></div><p><strong>伪类选择器</strong></p> <div class="language-css extra-class"><pre class="language-css"><code>1、结构伪类选择器
+<span class="token property">X</span><span class="token punctuation">:</span>first-child 匹配子集的第一个元素，IE7就可以支持
+<span class="token property">X</span><span class="token punctuation">:</span>last-child 匹配父元素中最后一个X元素
+<span class="token property">X</span><span class="token punctuation">:</span>nth-child（）用于匹配索引值为N的子元素。索引值从1开始 odd奇数 even偶数
+<span class="token property">X</span><span class="token punctuation">:</span>only-child 用的较少 比如上述代码匹配的是DIV下的有且仅有一个P，也就是说，如果DIV内有多个P 将不再匹配
+<span class="token property">X</span><span class="token punctuation">:</span>root匹配文档的根元素。在HTML中，根元素永远是HTML
+X：enpty匹配没有任何子元素（包含文本）的元素X
+
+2、目标伪类选择器
+E：target选择匹配E的所有元素，且匹配元素被相关URL指向
+1. UI元素状态伪类选择器 <span class="token property">E</span><span class="token punctuation">:</span>enabled 匹配所有用户界面（from表单）中处于可用状态的E元素 <span class="token property">E</span><span class="token punctuation">:</span>disabled 匹配所有用户界面（from表单）中处于不可用状态E元素 <span class="token property">E</span><span class="token punctuation">:</span>checked 匹配所有用户界面（from表单）中处于选中状态的E元素 <span class="token property">E</span><span class="token punctuation">:</span>seletion匹配E元素中被用户选中或处于高亮状态的部分
+2. 否定伪类选择器
+<span class="token property">E</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>匹配所有不匹配简单选择符s的元素E 反向操作 不是这个就行
+</code></pre></div><p><strong>文本阴影</strong></p> <div class="language-css extra-class"><pre class="language-css"><code>Text-shadow：10px 20px 1px red
+1. 水平方向位移 2.垂直方向位移 3.模糊程度 4.颜色
+支持多个阴影效果 用逗号隔开
+盒子阴影
+<span class="token property">box-shadow</span> <span class="token punctuation">:</span> 10px 10px 10px 5px red<span class="token punctuation">;</span>
+支持多个阴影效果 用逗号隔开
+h-shadow 水平阴影 v-shadow 垂直阴影
+bur 模糊距离 spread 阴影大小 color 阴影颜色
+inset 内侧阴影
+</code></pre></div><p><strong>圆角边框</strong></p> <div class="language-css extra-class"><pre class="language-css"><code>Border-radius：PX或者百分比
+V1，四个角一样
+V1<span class="token punctuation">,</span>v2 左上右下，左下右上 一致
+V1<span class="token punctuation">,</span>v2<span class="token punctuation">,</span>v3 左上，左下右上，右下
+V1<span class="token punctuation">,</span>v2<span class="token punctuation">,</span>v3<span class="token punctuation">,</span>v4 顺时针方向
+Border-top-left-radius 垂直在先 水平在后
+<span class="token property">Border-radius</span><span class="token punctuation">:</span>30px/60px 水平/垂直 仅支持border-radius
+Border-radius设置为正方形宽度的一半 可以制造一个圆
+</code></pre></div><p><strong>字体引入</strong></p> <div class="language-css extra-class"><pre class="language-css"><code>字体模块：<span class="token atrule"><span class="token rule">@font-face</span>是CSS3中的一个模块，它主要是把自定义的Web字体嵌入到你的网页中，
+随着@font-face的出现，我们在Web的开发中使用字体不怕只能使用Web安全字体 在IE4就支持
+@font-face的语法规则：
+@font-face</span><span class="token punctuation">{</span>
+<span class="token property">Font-family</span><span class="token punctuation">:</span>&lt;YourWebFontName&gt;<span class="token punctuation">;</span>
+<span class="token property">Src</span><span class="token punctuation">:</span>&lt;source&gt;[&lt;format&gt;][<span class="token punctuation">,</span>&lt;source&gt;[&lt;format&gt;]]*<span class="token punctuation">;</span>
+[<span class="token property">font-weight</span><span class="token punctuation">:</span>&lt;weight&gt;]<span class="token punctuation">;</span>
+[<span class="token property">font-style</span><span class="token punctuation">:</span>&lt;style&gt;]<span class="token punctuation">;</span> 
+<span class="token atrule"><span class="token rule">@font-face</span>语法说明：
+1、YourWebFontNam：此值指的是你的自定义字体名称，最好是使用你下载的默认字体
+，他将被引用到你的web元素中的font-family <span class="token property">。列如Font-family</span><span class="token punctuation">:</span>&lt;YourWebFontName&gt;<span class="token punctuation">;</span></span>
+2、source：此值指的是你自定义的字体存放路径，可以是相对路径也可以是绝对路径；
+</code></pre></div><p><strong>怪异盒模型</strong></p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token property">Box-sizing</span><span class="token punctuation">:</span>content-box 默认标准盒模型
+<span class="token property">Box-sizing</span><span class="token punctuation">:</span>border-box 怪异盒模型 为元素设定的宽度和高度决定了元素的边框盒子。
+也就是说，为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制。
+通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。
+更改原有布局盒子模型的计算方式通过Box-sizing属性的取值进行更改 
+</code></pre></div><p>**弹性盒 **</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token property">display</span><span class="token punctuation">:</span>flex<span class="token punctuation">;</span> 一种新的布局方式 特别适合移动端布局
+1. 让子元素默认横向排列
+2. 行内元素，变成块级元素
+3. 只有一个元素的情况 可以使用margin：auto 自动居中
+
+修改主轴方向
+flex-direction：column<span class="token punctuation">;</span> 竖直排列
+flex-direction：row<span class="token punctuation">;</span> 默认的水平排列
+flex-direction：row-reverse<span class="token punctuation">;</span> 类似右浮动水平排列
+flex-direction：column-reverse<span class="token punctuation">;</span> 反向竖直排列
+
+主轴对齐方式
+<span class="token property">Justify-content</span><span class="token punctuation">:</span> ；
+常用属性值：flex-start flex-end center
+space-between 两端对齐 space-around 距离环绕 
+
+侧轴对齐方式
+<span class="token property">align-items</span><span class="token punctuation">:</span> <span class="token punctuation">;</span> 调整侧
+折行： flex-wrap：warp； 折行显示
+<span class="token property">Align-content</span><span class="token punctuation">:</span>flex-start<span class="token punctuation">;</span> 控制折行后的行间距
+
+项目中的对齐属性：
+Align-self 单独给某个项目设置
+Align-self：baseline 与flex-start 效果一致
+Align-self：stretch 拉伸默认撑开占满
+
+项目中顺序调整 ： order：权重数值； 可使用负数 
+
+剩余宽高 
+属性值 <span class="token property">flex</span><span class="token punctuation">:</span>数字<span class="token punctuation">;</span> 占满剩余空间 
+<span class="token property">Flex-shrink</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span> 横向布局 配合
+</code></pre></div><p><strong>移动端布局：</strong></p> <div class="language-css extra-class"><pre class="language-css"><code>浏览器模拟器上显示的分辨率
+CSS像素：设备的独立像素
+物理分辨率（截图分辨率）：真正的设备像素
+设备像素比（dpr）=物理像素/CSS像素
+尽量使用百分比布局 弹性盒布局 rem布局
+布局视口：布局视口是指网页的宽度，一般移动端浏览器都默认设置了布局视口的宽度。
+根据设备的不同，布局视口的默认宽度有可能是768PX、980PX、或1024PX等。
+</code></pre></div><p><img src="https://cdn.nlark.com/yuque/0/2022/png/32841606/1669706247469-99c2566d-71b8-4e35-9105-83faa5bfa2f7.png#clientId=ucf7f893f-aa08-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=u3b722036&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=163&amp;originWidth=188&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=4378&amp;status=done&amp;style=none&amp;taskId=u45bdbbbd-056d-4f9e-a2e4-daefeed2121&amp;title=" alt="image.png">
+编辑
+添加图片注释，不超过 140 字（可选）
+**视觉视口：**视觉视口是指用户正在看到的网站的区域，这个区域的宽度等同于移动设备的浏览器窗口的宽度。
+<img src="https://cdn.nlark.com/yuque/0/2022/png/32841606/1669706247475-c5c84e82-3ead-45ab-b291-47e3e65fe0c5.png#clientId=ucf7f893f-aa08-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=u90ba17f4&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=174&amp;originWidth=191&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=4494&amp;status=done&amp;style=none&amp;taskId=u6bcd5fe9-b4db-409b-9c28-a26c6859b44&amp;title=" alt="image.png">
+编辑
+添加图片注释，不超过 140 字（可选）
+**理想视口：**理想视口是指对设备来讲最理想的视口尺寸，采用理想视口的方式，可以使网页在移动端浏览器上获得最理想的浏览和阅读的宽度。
+<img src="https://cdn.nlark.com/yuque/0/2022/png/32841606/1669706247906-b0722726-74ac-4f8d-863d-3b579d4146aa.png#clientId=ucf7f893f-aa08-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=uaad69d16&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=153&amp;originWidth=106&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=3226&amp;status=done&amp;style=none&amp;taskId=ue49af708-bb90-4738-a347-13fdfd6c301&amp;title=" alt="image.png"></p> <p>添加图片注释，不超过 140 字（可选）
+Viewport 视口
+Content=device-width 内容=设备的宽度
+Initial-scale=1.0设备像素比 User-scalable=no 不允许用户缩放
+<strong>多列布局 瀑布流</strong></p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token property">Column-count</span><span class="token punctuation">:</span>数字<span class="token punctuation">;</span> 控制显示的列数 
+
+<span class="token property">Column-gap</span><span class="token punctuation">:</span> *px； 调整列间距
+
+<span class="token property">Column-rule</span><span class="token punctuation">:</span> 1px soild color<span class="token punctuation">;</span> 设置列边框
+
+<span class="token property">Column-fill</span><span class="token punctuation">:</span>balance<span class="token punctuation">;</span> auto； 检索列高度是否统一/把父盒子占满
+
+<span class="token property">Column-span</span><span class="token punctuation">:</span>all<span class="token punctuation">;</span> 横跨所有列
+
+Column-width 调整列宽
+
+<span class="token property">Break-inside</span><span class="token punctuation">:</span>avoid<span class="token punctuation">;</span>禁止盒子内部折行
+</code></pre></div><p><strong>响应式布局：</strong></p> <div class="language-css extra-class"><pre class="language-css"><code>固定布局： 以像素作为页面的基本单位，不管设备屏幕及浏览器宽度，只设计一套尺寸。
+可切换的固定布局：同样以像素作为页面单位，参考主流设备尺寸，设计几套不同宽度的布局。
+通过识别的屏幕尺寸或浏览器宽度，选择最适合的那套宽度布局
+
+弹性布局
+以百分比作为页面的基本单位，可以适应一定范围内所有尺寸的设备屏幕及浏览器宽度，
+并能完美利用有效空间展现最佳效果。
+
+混合布局：同弹性布局类似，可以适应一定范围内所有尺寸的设备屏幕以及浏览器宽度，
+并能完美利用有效空间展现最佳效果；只是混合像素和百分比两种单位作为页面单位。
+
+布局响应：对页面进行响应式的设计实现，需要对相同内容进行宽度不同的布局设计，
+有两种设计方式：PC优先（从PC端开始向下设计）；移动优先（从移动端向上设计）；
+无论基于哪种模式的设计，要兼容所有设备，
+布局响应时不可避免的需要对对模块布局做一些变化（发生布局改变的临界点称之为断点）。
+</code></pre></div><p><strong>媒体查询</strong></p> <div class="language-css extra-class"><pre class="language-css"><code>1. <span class="token atrule"><span class="token rule">@media</span> all <span class="token keyword">and</span>（min-width：*px）</span><span class="token punctuation">{</span>对应样式<span class="token punctuation">}</span>
+Screen 显示器、笔记本、移动端等设备 是媒体类型的一种
+And被称为关键字，其他关键字还包括not（排除某种设备），only（限定某种设备） 
+（min-width：*px）就是媒体特性，其被放在一对圆括号中
+<span class="token property">Orientation</span><span class="token punctuation">:</span>portrait 竖屏 <span class="token property">orientation</span><span class="token punctuation">:</span>landscape 横屏
+</code></pre></div><p><strong>Rem布局开发</strong></p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token property">Px</span><span class="token punctuation">:</span>50px
+<span class="token property">em</span><span class="token punctuation">:</span>相对单位，相对于父元素的字体大小。div <span class="token property">width</span><span class="token punctuation">:</span>10em<span class="token punctuation">;</span>
+<span class="token property">rem</span><span class="token punctuation">:</span>相对单位，相对于根元素（html）字体大小， div <span class="token property">width</span><span class="token punctuation">:</span>10rem<span class="token punctuation">;</span>
+假如提供750PX设计稿情况下 使用
+&lt;script&gt; document.documentElement.style.fontSize=document.documentElement.clientWidth/750 * 16 +<span class="token string">'px'</span>
+&lt;/script&gt;
+Fontsize=当前设备的css设备布局宽度/物理分辨率（设计稿的宽度）*基准font-size
+</code></pre></div><p><img src="https://cdn.nlark.com/yuque/0/2022/png/32841606/1669706247973-e402b845-b286-4821-90c2-2b089b101afc.png#clientId=ucf7f893f-aa08-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=u42023da7&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=87&amp;originWidth=167&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=14267&amp;status=done&amp;style=none&amp;taskId=ua0417bfd-266e-4845-8c7b-7af6477f953&amp;title=" alt="image.png"></p> <p>添加图片注释，不超过 140 字（可选）</p> <div class="language-css extra-class"><pre class="language-css"><code>下载工具 F1+center 快速转换 
+750px- 转换
+Rem 等比例缩放布局
+vw与vh
+Vh ：view-height
+ 100vh=视口的高度
+Vw ：view-width
+ 100vw=视口的宽度
+没有滚动条的时候100vw=100%
+有滚动条的时候100vw包含滚动条，窗口大小
+100% 刨除滚动条 剩余空间占满
+</code></pre></div><p><strong>渐变</strong></p> <div class="language-css extra-class"><pre class="language-css"><code>1. 线性渐变 ： 语法background：<span class="token function">linear-gradient</span><span class="token punctuation">(</span>red<span class="token punctuation">,</span>yellow<span class="token punctuation">)</span> 支持多颜色渐变 
+支持方向 to top right 支持角度的写法 0-360deg 度数 
+To top 从上到下 to bottom 从下到上<span class="token punctuation">(</span>默认值<span class="token punctuation">)</span> 
+To left 从右到左 to right 从左到右
+
+2. 径向渐变： 语法background：<span class="token function">radial-gradient</span><span class="token punctuation">(</span> <span class="token punctuation">)</span> 
+<span class="token property">Center</span><span class="token punctuation">:</span>渐变起点的位置，可以为百分比，默认是图形正中心 
+Circle 设置渐变形状为圆形 ；
+ellipse 根据元素形状渐变，元素为正方形时候显示效果与circle无差异 
+默认值 Size 渐变的大小 即渐变到哪里停止，它有4个值。 
+<span class="token property">closet-side</span><span class="token punctuation">:</span>最近边； 
+<span class="token property">farthest-side</span><span class="token punctuation">:</span>最远边；
+closest-corner：最近角；
+farthest-corner： 最远角。
+
+3. 重复渐变：
+语法 background：<span class="token function">repeating-linear-gradient</span><span class="token punctuation">(</span>red<span class="token punctuation">,</span>yellow<span class="token punctuation">)</span>
+</code></pre></div><p><strong>过渡</strong>
+动画过渡属性</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token property">transition</span><span class="token punctuation">:</span> all （1） 2s（2） linear（3） 2s（4）
+1. all 所有属性/具体属性值 <span class="token property">除了display</span><span class="token punctuation">:</span> none/block属性 
+2. 2s动画运动时间 
+3. linear 匀速 ease逐渐慢下来 ease-in加速 ease-out 减速ease-in-out 先加速后减速 
+4.  2s延迟
+贝塞尔曲线 属性值 <span class="token function">cubic-bezier</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>**2D属性- **Transfrom</p> <div class="language-css extra-class"><pre class="language-css"><code>属性值： 平移
+TranslateX（100px） 向右平移100px
+TranslateY（100px） 向下平移100px 负值则反
+Transfrom：TranslateX（100px）TranslateY（100px） 右下平移
+Transfrom：Translate（100px，100px）； 简便写法
+</code></pre></div><p>为何不使用position定位做动画 ：
+<img src="https://cdn.nlark.com/yuque/0/2022/png/32841606/1669706248412-638a5675-a9b5-4380-954c-3bd69ffebf48.png#clientId=ucf7f893f-aa08-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=u2c907b63&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=169&amp;originWidth=720&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=138913&amp;status=done&amp;style=none&amp;taskId=u813c573f-1712-4ace-9547-4fb84e67422&amp;title=" alt="image.png">
+编辑切换为居中                                       加图片注释，不超过 140 字（可选）</p> <div class="language-css extra-class"><pre class="language-css"><code>为了减少浏览器负担 Transfrom和opacity更加优选 
+设置left会合成图层 设置translate是独立图层
+
+属性值： 缩放
+Transfrom：Sclae（比例1 1.5 ）； 负值 倒像放大效果
+支持X轴 支持Y轴 
+ScaleX 只支持X轴缩放 ScaleY 只支持Y轴缩放
+Trasform-origin：left top<span class="token punctuation">;</span> 中心点在左上角 默认值center
+
+属性值：旋转
+Transfrom：rotate（deg） 正值 顺时针旋转 
+XYZ坐标轴支持 默认Z轴
+Trasform 中可添加多个属性值 正常顺序为 平移 旋转 缩放
+
+属性值：倾斜
+Transfrom：skew（deg） 支持X<span class="token punctuation">,</span>Y轴 默认拉扯右下角
+</code></pre></div><p><strong>关键帧动画</strong></p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token property">语法：Animation</span><span class="token punctuation">:</span> 定义名字2s linear 1s **；
+2s：轮播时间 linear：动画运动速度 1s：延迟时间 **：轮播次
+Infinite 无限次执行
+声明动画写法： 
+<span class="token atrule"><span class="token rule">@keyframes</span> <span class="token punctuation">(</span>/定义名字/<span class="token punctuation">)</span></span> <span class="token punctuation">{</span> 
+<span class="token selector">From</span><span class="token punctuation">{</span>/初始状态/<span class="token punctuation">}</span> <span class="token selector">to</span><span class="token punctuation">{</span>/结束状态/<span class="token punctuation">}</span> 
+ <span class="token punctuation">}</span>
+<span class="token atrule"><span class="token rule">@keyframes</span> <span class="token punctuation">(</span>/定义名字/<span class="token punctuation">)</span></span> <span class="token punctuation">{</span> 
+<span class="token selector">0%</span><span class="token punctuation">{</span>/初始状态/<span class="token punctuation">}</span> <span class="token selector">20% 30% 40% ..中间状态 100%</span><span class="token punctuation">{</span>/结束状态/<span class="token punctuation">}</span> 
+ <span class="token punctuation">}</span>
+Animation-name 动画名称
+Animation-duration 动画持续时间
+Animation-timing-function 动画过渡类型运动速度
+Animation- delay 动画延迟时间
+Animation-infinite/number动画循环次数 infinite无限循环 number 循环次数
+Animation-direction nomal正常方向 reverse反方向运行 alternate 先正常运行然后反方向运行 并持续交替
+Alternate-reverse 先反方向运行然后正常运行 并持续交替
+<span class="token property">Animation-play-state</span><span class="token punctuation">:</span>paused<span class="token punctuation">;</span> 动画停顿
+</code></pre></div><p><strong>为了实现无缝轮播 最后一份跟第一份是一样的</strong></p> <div class="language-css extra-class"><pre class="language-css"><code>Steps（直接进行关键帧跳跃）
+语法 Steps（1，end） steps-end
+1：帧数 end：保留当前帧，看不到最后一帧 动画结束
+Start：保留下一帧，看不见第一帧，从第一帧很快跳到最后一帧
+</code></pre></div><p>Animate.css 动画库 网址 <a href="http://www.dowebok.com/demo/2014/98/" target="_blank" rel="noopener noreferrer">http://www.dowebok.com/demo/2014/98/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <strong>3D动画</strong></p> <div class="language-css extra-class"><pre class="language-css"><code>2D场景水平垂直XY轴 3D相比2D多出一个Z轴
+3D平移 
+首步 transform-style：preserve-3d<span class="token punctuation">;</span> 给盒子添加3D 舞台
+<span class="token property">Perspective</span><span class="token punctuation">:</span>**px 设置景深
+<span class="token property">Transform</span><span class="token punctuation">:</span><span class="token function">traslate3d</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>200px<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>z<span class="token punctuation">)</span> 设置数值
+3D旋转 <span class="token property">Transform</span><span class="token punctuation">:</span><span class="token function">rotate3d</span><span class="token punctuation">(</span>1<span class="token punctuation">,</span>1<span class="token punctuation">,</span>1<span class="token punctuation">,</span>30deg<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+前面三个值取值0-1 后面的值是角度值
+3D 缩放 sclaeZ 需要加上景深 再使用旋转放大Z轴 
+ScaleZ 和 scale3d 函数单独使用时没有任何效果，需要配合其他的变形函数一起使用才会有效果
+</code></pre></div><p><strong>网格布局 Grid</strong></p> <div class="language-css extra-class"><pre class="language-css"><code>含义：它将网页划分成一个个网格，可以任意组合不同的风格，做出各种各样的布局
+和flex布局的区别：
+FLEX布局是轴线布局，只能指定项目针对轴线的位置，可以看做是一维布局。
+Grid布局是将容器划分成行和列 产生单元格 然后指定项目所在的单元格，可以看做是二维布局
+</code></pre></div><p><strong>display:grid 网格布局</strong></p> <div class="language-css extra-class"><pre class="language-css"><code>Display关于网格的取值分为两个，grid（块网格）和inline-grid（行内网格，行内块）
+Grid===容器从上向下排列 inline-grid===容器从左向右排列
+规定行属性 <span class="token property">grid-template-rows</span><span class="token punctuation">:</span>
+固定列属性 <span class="token property">grid-template-column</span><span class="token punctuation">:</span> 
+后面的值取决于代表多少行列
+</code></pre></div><p><strong>属性值语法方式</strong></p> <div class="language-css extra-class"><pre class="language-css"><code>1. 固定值 **px **px 
+2. 百分比 
+3. repeat（3<span class="token punctuation">,</span>33.33%） 3次重复33.33% 重点
+4. repeat（auto-fill，25%） 自动划分重复次数
+5. fr 片段 <span class="token property">grid-template-row</span><span class="token punctuation">:</span> 100px 1fr 300px 类似于flex1
+6. minmax（100px，200px） 最小100 最大200
+7. auto <span class="token property">grid-template-row</span><span class="token punctuation">:</span>100px auto 200px auto自适应
+</code></pre></div><div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">间距 
+
+grid-row-gap:**px 行与行之间的间距
+grid-column-gap:**px 列与列之间的间距
+可直接单独使用 gap:**px 行列间距
+
+合并
+先指定区域名字 列如：
+grid-template-areas:’a a c’
+’a a f’
+’g h i’
+单独设置某个盒子名字
+div:nth-child(第几个需要作为主体)</span><span class="token punctuation">{</span>
+<span class="token property">gird-area</span><span class="token punctuation">:</span>a<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+只可合并正方形或者长方形
+
+对齐方式
+<span class="token property">Grid-auto-flow</span><span class="token punctuation">:</span>columns / rows <span class="token punctuation">;</span>
+网格对齐方式与弹性盒 所使用的属性大体相同 
+<span class="token property">使用justify-content</span><span class="token punctuation">:</span><span class="token punctuation">;</span> align-content<span class="token punctuation">;</span> 九宫格的区域 
+<span class="token property">justify-items</span><span class="token punctuation">:</span><span class="token punctuation">;</span> align-items<span class="token punctuation">;</span> 每一个项目的区域
+<span class="token property">Place-content</span><span class="token punctuation">:</span>center center<span class="token punctuation">;</span> 大九宫格水平垂直居中 复合写法 
+<span class="token property">Place-items</span><span class="token punctuation">:</span>center center<span class="token punctuation">;</span> 每一个项目的区域居中 复合写法
+
+项目属性
+网格线合并（单一属性）
+<span class="token property">grid-column-start</span><span class="token punctuation">:</span>1<span class="token punctuation">;</span> 从第1条列网格线开始合并 
+<span class="token property">grid-column-end</span><span class="token punctuation">:</span>3<span class="token punctuation">;</span> 到3条列网格线合并结束
+简写：
+<span class="token property">grid-column</span><span class="token punctuation">:</span>1/3<span class="token punctuation">;</span> 
+<span class="token property">grid-row-start</span><span class="token punctuation">:</span>1<span class="token punctuation">;</span> 从第1条行网格线开始合并 
+<span class="token property">grid-row-end</span><span class="token punctuation">:</span>3<span class="token punctuation">;</span> 到3条行网格线合并结束
+简写： 
+<span class="token property">grid-row</span><span class="token punctuation">:</span>1/3<span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.47b00d9e.js" defer></script><script src="/assets/js/2.63c13255.js" defer></script><script src="/assets/js/9.f8d4bff4.js" defer></script>
+  </body>
+</html>

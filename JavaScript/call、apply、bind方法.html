@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>通过call实现bind | Wiess&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/ohwo2.jpg">
+    <meta name="description" content="分享笔记，技术博客">
+    
+    <link rel="preload" href="/assets/css/0.styles.d6ad21ed.css" as="style"><link rel="preload" href="/assets/js/app.47b00d9e.js" as="script"><link rel="preload" href="/assets/js/2.63c13255.js" as="script"><link rel="preload" href="/assets/js/13.d54cd060.js" as="script"><link rel="prefetch" href="/assets/js/10.6f45d255.js"><link rel="prefetch" href="/assets/js/11.f8205a47.js"><link rel="prefetch" href="/assets/js/12.bd1b258c.js"><link rel="prefetch" href="/assets/js/14.9ccbfb79.js"><link rel="prefetch" href="/assets/js/15.8a848db8.js"><link rel="prefetch" href="/assets/js/16.bbee7035.js"><link rel="prefetch" href="/assets/js/17.a77f7b7a.js"><link rel="prefetch" href="/assets/js/18.2505abdc.js"><link rel="prefetch" href="/assets/js/19.3b9dec56.js"><link rel="prefetch" href="/assets/js/20.fbcc61e3.js"><link rel="prefetch" href="/assets/js/21.76693485.js"><link rel="prefetch" href="/assets/js/22.015311e2.js"><link rel="prefetch" href="/assets/js/23.4965c38b.js"><link rel="prefetch" href="/assets/js/24.7d8fcfee.js"><link rel="prefetch" href="/assets/js/25.1fad7845.js"><link rel="prefetch" href="/assets/js/26.78bfc509.js"><link rel="prefetch" href="/assets/js/27.4ccd57ee.js"><link rel="prefetch" href="/assets/js/28.f9057288.js"><link rel="prefetch" href="/assets/js/29.ebde7145.js"><link rel="prefetch" href="/assets/js/3.a4d9c696.js"><link rel="prefetch" href="/assets/js/30.30876a1e.js"><link rel="prefetch" href="/assets/js/31.6b81c6bf.js"><link rel="prefetch" href="/assets/js/32.37b3d365.js"><link rel="prefetch" href="/assets/js/33.f2cc1a34.js"><link rel="prefetch" href="/assets/js/34.c3864ec8.js"><link rel="prefetch" href="/assets/js/35.d8109eef.js"><link rel="prefetch" href="/assets/js/36.964f8786.js"><link rel="prefetch" href="/assets/js/37.97f0ce0a.js"><link rel="prefetch" href="/assets/js/38.0fab69ca.js"><link rel="prefetch" href="/assets/js/4.94733d25.js"><link rel="prefetch" href="/assets/js/5.2ea06e07.js"><link rel="prefetch" href="/assets/js/6.8d81f0ec.js"><link rel="prefetch" href="/assets/js/7.1e08345a.js"><link rel="prefetch" href="/assets/js/8.0d63082f.js"><link rel="prefetch" href="/assets/js/9.f8d4bff4.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d6ad21ed.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Wiess's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="React" class="dropdown-title"><span class="title">React</span> <span class="arrow down"></span></button> <button type="button" aria-label="React" class="mobile-dropdown-title"><span class="title">React</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/React/react.html" class="nav-link">
+  React基础语法
+</a></li><li class="dropdown-item"><!----> <a href="/React/hook.html" class="nav-link">
+  React-Hooks
+</a></li><li class="dropdown-item"><!----> <a href="/React/Redux.html" class="nav-link">
+  Redux
+</a></li><li class="dropdown-item"><!----> <a href="/React/React-Router.html" class="nav-link">
+  React-Router
+</a></li><li class="dropdown-item"><!----> <a href="/React/深入理解Redux.html" class="nav-link">
+  深入理解Redux
+</a></li><li class="dropdown-item"><!----> <a href="/React/Immutable.html" class="nav-link">
+  Immutable
+</a></li><li class="dropdown-item"><!----> <a href="/React/RouterV6.html" class="nav-link">
+  RouterV6
+</a></li><li class="dropdown-item"><!----> <a href="/talk/react-hooks中的过期闭包问题.html" class="nav-link">
+  react-hooks中的过期闭包问题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vue" class="mobile-dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Vue/Vue双向绑定原理.html" class="nav-link">
+  Vue双向绑定
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript" class="dropdown-title"><span class="title">JavaScript</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript" class="mobile-dropdown-title"><span class="title">JavaScript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/JavaScript/JavaScript.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/浅拷贝和深拷贝.html" class="nav-link">
+  浅拷贝和深拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/事件循环Eventloop.html" class="nav-link">
+  事件循环EventLoop
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/重绘回流.html" class="nav-link">
+  重绘回流(重排)
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/call、apply、bind方法.html" class="nav-link">
+  call、apply、bind方法
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/TypeScript.html" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/talk/Ajax、Fetch、Axios这三者有什么区别.html" class="nav-link">
+  Ajax、Fetch、Axios这三者有什么区别
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人项目" class="dropdown-title"><span class="title">个人项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人项目" class="mobile-dropdown-title"><span class="title">个人项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/个人项目/ReactEvents.html" class="nav-link">
+  ReactEvents
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Vue2-文章后台管理系统.html" class="nav-link">
+  Vue2-文章后台管理系统
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Vue2-MovieShop.html" class="nav-link">
+  Vue2-MovieShop
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Yi-MiniShop.html" class="nav-link">
+  Yi-MiniShop
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Netease-Cloud-Music.html" class="nav-link">
+  Netease-Cloud-Music(完成中)
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="随便聊聊" class="dropdown-title"><span class="title">随便聊聊</span> <span class="arrow down"></span></button> <button type="button" aria-label="随便聊聊" class="mobile-dropdown-title"><span class="title">随便聊聊</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Css/CSS.html" class="nav-link">
+  Css基础+css3
+</a></li><li class="dropdown-item"><!----> <a href="/Css/css属性.html" class="nav-link">
+  Css常用属性
+</a></li><li class="dropdown-item"><!----> <a href="/WebPack/WebPack.html" class="nav-link">
+  WebPack入门基础
+</a></li><li class="dropdown-item"><!----> <a href="/WebPack/WebPack面试题.html" class="nav-link">
+  WebPack面试题
+</a></li><li class="dropdown-item"><!----> <a href="/talk/talk.html" class="nav-link">
+  高频面试题
+</a></li><li class="dropdown-item"><!----> <a href="/talk/git.html" class="nav-link">
+  git使用
+</a></li><li class="dropdown-item"><!----> <a href="/talk/小程序.html" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/talk/uniapp购物车.html" class="nav-link">
+  uniapp购物车
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="React" class="dropdown-title"><span class="title">React</span> <span class="arrow down"></span></button> <button type="button" aria-label="React" class="mobile-dropdown-title"><span class="title">React</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/React/react.html" class="nav-link">
+  React基础语法
+</a></li><li class="dropdown-item"><!----> <a href="/React/hook.html" class="nav-link">
+  React-Hooks
+</a></li><li class="dropdown-item"><!----> <a href="/React/Redux.html" class="nav-link">
+  Redux
+</a></li><li class="dropdown-item"><!----> <a href="/React/React-Router.html" class="nav-link">
+  React-Router
+</a></li><li class="dropdown-item"><!----> <a href="/React/深入理解Redux.html" class="nav-link">
+  深入理解Redux
+</a></li><li class="dropdown-item"><!----> <a href="/React/Immutable.html" class="nav-link">
+  Immutable
+</a></li><li class="dropdown-item"><!----> <a href="/React/RouterV6.html" class="nav-link">
+  RouterV6
+</a></li><li class="dropdown-item"><!----> <a href="/talk/react-hooks中的过期闭包问题.html" class="nav-link">
+  react-hooks中的过期闭包问题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vue" class="mobile-dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Vue/Vue双向绑定原理.html" class="nav-link">
+  Vue双向绑定
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript" class="dropdown-title"><span class="title">JavaScript</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript" class="mobile-dropdown-title"><span class="title">JavaScript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/JavaScript/JavaScript.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/浅拷贝和深拷贝.html" class="nav-link">
+  浅拷贝和深拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/事件循环Eventloop.html" class="nav-link">
+  事件循环EventLoop
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/重绘回流.html" class="nav-link">
+  重绘回流(重排)
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/call、apply、bind方法.html" class="nav-link">
+  call、apply、bind方法
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/TypeScript.html" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/talk/Ajax、Fetch、Axios这三者有什么区别.html" class="nav-link">
+  Ajax、Fetch、Axios这三者有什么区别
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人项目" class="dropdown-title"><span class="title">个人项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人项目" class="mobile-dropdown-title"><span class="title">个人项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/个人项目/ReactEvents.html" class="nav-link">
+  ReactEvents
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Vue2-文章后台管理系统.html" class="nav-link">
+  Vue2-文章后台管理系统
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Vue2-MovieShop.html" class="nav-link">
+  Vue2-MovieShop
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Yi-MiniShop.html" class="nav-link">
+  Yi-MiniShop
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Netease-Cloud-Music.html" class="nav-link">
+  Netease-Cloud-Music(完成中)
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="随便聊聊" class="dropdown-title"><span class="title">随便聊聊</span> <span class="arrow down"></span></button> <button type="button" aria-label="随便聊聊" class="mobile-dropdown-title"><span class="title">随便聊聊</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Css/CSS.html" class="nav-link">
+  Css基础+css3
+</a></li><li class="dropdown-item"><!----> <a href="/Css/css属性.html" class="nav-link">
+  Css常用属性
+</a></li><li class="dropdown-item"><!----> <a href="/WebPack/WebPack.html" class="nav-link">
+  WebPack入门基础
+</a></li><li class="dropdown-item"><!----> <a href="/WebPack/WebPack面试题.html" class="nav-link">
+  WebPack面试题
+</a></li><li class="dropdown-item"><!----> <a href="/talk/talk.html" class="nav-link">
+  高频面试题
+</a></li><li class="dropdown-item"><!----> <a href="/talk/git.html" class="nav-link">
+  git使用
+</a></li><li class="dropdown-item"><!----> <a href="/talk/小程序.html" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/talk/uniapp购物车.html" class="nav-link">
+  uniapp购物车
+</a></li></ul></div></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="通过call实现bind"><a href="#通过call实现bind" class="header-anchor">#</a> 通过call实现bind</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Function</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">newBind</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>arr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> that <span class="token operator">=</span> <span class="token keyword">this</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">that</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token operator">...</span>arr<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">a</span><span class="token operator">:</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">say</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+say<span class="token punctuation">.</span><span class="token function">newBind</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">//{ a: 1 }</span>
+<span class="token comment">//1 2 3</span>
+</code></pre></div><h3 id="手写call"><a href="#手写call" class="header-anchor">#</a> 手写call</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">//通过对象调用方法来修改this指向</span>
+<span class="token class-name">Function</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">call2</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">context</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">const</span> ctx <span class="token operator">=</span> context <span class="token operator">||</span> window
+  ctx<span class="token punctuation">.</span>func <span class="token operator">=</span> <span class="token keyword">this</span> <span class="token comment">//调用call2时，this是调用call2的方法（call2是在函数对象上）</span>
+  <span class="token comment">//测试用例中这个this打印出来是：[function a]</span>
+  <span class="token keyword">const</span> args <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token comment">//保存参数</span>
+  <span class="token comment">//通过在ctx中新建一个 函数对象等于调用时的对象 来调用执行来修改this指向</span>
+  <span class="token keyword">const</span> res <span class="token operator">=</span> arguments<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">1</span> <span class="token operator">?</span> ctx<span class="token punctuation">.</span><span class="token function">func</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span> <span class="token operator">:</span> ctx<span class="token punctuation">.</span><span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">delete</span> ctx<span class="token punctuation">.</span>func<span class="token comment">//避免造成全局污染</span>
+  <span class="token keyword">return</span> res
+<span class="token punctuation">}</span>
+
+<span class="token comment">//测试用例：</span>
+obj<span class="token operator">=</span><span class="token punctuation">{</span><span class="token literal-property property">c</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span>y</span><span class="token punctuation">)</span><span class="token punctuation">{</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">}</span>
+<span class="token function">a</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token comment">//{c:2} 1 2</span>
+a<span class="token punctuation">.</span><span class="token function">call2</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token comment">//{c:2,func:[function a]} 1 2</span>
+</code></pre></div><h3 id="手写apply"><a href="#手写apply" class="header-anchor">#</a> 手写apply</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Function</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">apply2</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">context</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">const</span> ctx <span class="token operator">=</span> context <span class="token operator">||</span> window
+  ctx<span class="token punctuation">.</span>func <span class="token operator">=</span> <span class="token keyword">this</span>
+  <span class="token comment">//测试用例中这个this打印出来是：[function a]</span>
+  <span class="token comment">//通过在ctx中新建一个 函数对象等于调用时的对象 来调用执行来修改this指向</span>
+  <span class="token keyword">const</span> res <span class="token operator">=</span> arguments<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">?</span> ctx<span class="token punctuation">.</span><span class="token function">func</span><span class="token punctuation">(</span><span class="token operator">...</span>arguments<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">:</span> ctx<span class="token punctuation">.</span><span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">delete</span> ctx<span class="token punctuation">.</span>func<span class="token comment">//避免造成全局污染</span>
+  <span class="token keyword">return</span> res
+<span class="token punctuation">}</span>
+
+<span class="token comment">//测试用例：</span>
+obj<span class="token operator">=</span><span class="token punctuation">{</span><span class="token literal-property property">c</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span>y</span><span class="token punctuation">)</span><span class="token punctuation">{</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">}</span>
+<span class="token function">a</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment">//{c:2} 1 2</span>
+a<span class="token punctuation">.</span><span class="token function">call2</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment">//{c:2,func:[function a]} 1 2</span>
+</code></pre></div><h3 id="手写bind"><a href="#手写bind" class="header-anchor">#</a> 手写bind</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Function</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">bind2</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">context</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">//对context进行深拷贝，防止bind执行后返回函数未执行期间，context被修改</span>
+  <span class="token keyword">const</span> ctx <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">||</span> window
+  ctx<span class="token punctuation">.</span>func <span class="token operator">=</span> <span class="token keyword">this</span>
+  <span class="token keyword">const</span> args <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//注意bind方法需要合并两次函数执行的参数</span>
+    <span class="token keyword">const</span> Allargs <span class="token operator">=</span> args<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> Allargs<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">?</span> ctx<span class="token punctuation">.</span><span class="token function">func</span><span class="token punctuation">(</span><span class="token operator">...</span>Allargs<span class="token punctuation">)</span> <span class="token operator">:</span> ctx<span class="token punctuation">.</span><span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//测试</span>
+obj <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">c</span><span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>z</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+<span class="token function">a</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token comment">//{c:2} 1 2 3</span>
+a<span class="token punctuation">.</span><span class="token function">bind2</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token comment">//{c:2,func:[function a]} 1 2 3</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.47b00d9e.js" defer></script><script src="/assets/js/2.63c13255.js" defer></script><script src="/assets/js/13.d54cd060.js" defer></script>
+  </body>
+</html>

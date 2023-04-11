@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>栈 | Wiess&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/ohwo2.jpg">
+    <meta name="description" content="分享笔记，技术博客">
+    
+    <link rel="preload" href="/assets/css/0.styles.d6ad21ed.css" as="style"><link rel="preload" href="/assets/js/app.47b00d9e.js" as="script"><link rel="preload" href="/assets/js/2.63c13255.js" as="script"><link rel="preload" href="/assets/js/8.0d63082f.js" as="script"><link rel="prefetch" href="/assets/js/10.6f45d255.js"><link rel="prefetch" href="/assets/js/11.f8205a47.js"><link rel="prefetch" href="/assets/js/12.bd1b258c.js"><link rel="prefetch" href="/assets/js/13.d54cd060.js"><link rel="prefetch" href="/assets/js/14.9ccbfb79.js"><link rel="prefetch" href="/assets/js/15.8a848db8.js"><link rel="prefetch" href="/assets/js/16.bbee7035.js"><link rel="prefetch" href="/assets/js/17.a77f7b7a.js"><link rel="prefetch" href="/assets/js/18.2505abdc.js"><link rel="prefetch" href="/assets/js/19.3b9dec56.js"><link rel="prefetch" href="/assets/js/20.fbcc61e3.js"><link rel="prefetch" href="/assets/js/21.76693485.js"><link rel="prefetch" href="/assets/js/22.015311e2.js"><link rel="prefetch" href="/assets/js/23.4965c38b.js"><link rel="prefetch" href="/assets/js/24.7d8fcfee.js"><link rel="prefetch" href="/assets/js/25.1fad7845.js"><link rel="prefetch" href="/assets/js/26.78bfc509.js"><link rel="prefetch" href="/assets/js/27.4ccd57ee.js"><link rel="prefetch" href="/assets/js/28.f9057288.js"><link rel="prefetch" href="/assets/js/29.ebde7145.js"><link rel="prefetch" href="/assets/js/3.a4d9c696.js"><link rel="prefetch" href="/assets/js/30.30876a1e.js"><link rel="prefetch" href="/assets/js/31.6b81c6bf.js"><link rel="prefetch" href="/assets/js/32.37b3d365.js"><link rel="prefetch" href="/assets/js/33.f2cc1a34.js"><link rel="prefetch" href="/assets/js/34.c3864ec8.js"><link rel="prefetch" href="/assets/js/35.d8109eef.js"><link rel="prefetch" href="/assets/js/36.964f8786.js"><link rel="prefetch" href="/assets/js/37.97f0ce0a.js"><link rel="prefetch" href="/assets/js/38.0fab69ca.js"><link rel="prefetch" href="/assets/js/4.94733d25.js"><link rel="prefetch" href="/assets/js/5.2ea06e07.js"><link rel="prefetch" href="/assets/js/6.8d81f0ec.js"><link rel="prefetch" href="/assets/js/7.1e08345a.js"><link rel="prefetch" href="/assets/js/9.f8d4bff4.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d6ad21ed.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Wiess's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="React" class="dropdown-title"><span class="title">React</span> <span class="arrow down"></span></button> <button type="button" aria-label="React" class="mobile-dropdown-title"><span class="title">React</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/React/react.html" class="nav-link">
+  React基础语法
+</a></li><li class="dropdown-item"><!----> <a href="/React/hook.html" class="nav-link">
+  React-Hooks
+</a></li><li class="dropdown-item"><!----> <a href="/React/Redux.html" class="nav-link">
+  Redux
+</a></li><li class="dropdown-item"><!----> <a href="/React/React-Router.html" class="nav-link">
+  React-Router
+</a></li><li class="dropdown-item"><!----> <a href="/React/深入理解Redux.html" class="nav-link">
+  深入理解Redux
+</a></li><li class="dropdown-item"><!----> <a href="/React/Immutable.html" class="nav-link">
+  Immutable
+</a></li><li class="dropdown-item"><!----> <a href="/React/RouterV6.html" class="nav-link">
+  RouterV6
+</a></li><li class="dropdown-item"><!----> <a href="/talk/react-hooks中的过期闭包问题.html" class="nav-link">
+  react-hooks中的过期闭包问题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vue" class="mobile-dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Vue/Vue双向绑定原理.html" class="nav-link">
+  Vue双向绑定
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript" class="dropdown-title"><span class="title">JavaScript</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript" class="mobile-dropdown-title"><span class="title">JavaScript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/JavaScript/JavaScript.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/浅拷贝和深拷贝.html" class="nav-link">
+  浅拷贝和深拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/事件循环Eventloop.html" class="nav-link">
+  事件循环EventLoop
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/重绘回流.html" class="nav-link">
+  重绘回流(重排)
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/call、apply、bind方法.html" class="nav-link">
+  call、apply、bind方法
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/TypeScript.html" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/talk/Ajax、Fetch、Axios这三者有什么区别.html" class="nav-link">
+  Ajax、Fetch、Axios这三者有什么区别
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人项目" class="dropdown-title"><span class="title">个人项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人项目" class="mobile-dropdown-title"><span class="title">个人项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/个人项目/ReactEvents.html" class="nav-link">
+  ReactEvents
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Vue2-文章后台管理系统.html" class="nav-link">
+  Vue2-文章后台管理系统
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Vue2-MovieShop.html" class="nav-link">
+  Vue2-MovieShop
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Yi-MiniShop.html" class="nav-link">
+  Yi-MiniShop
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Netease-Cloud-Music.html" class="nav-link">
+  Netease-Cloud-Music(完成中)
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="随便聊聊" class="dropdown-title"><span class="title">随便聊聊</span> <span class="arrow down"></span></button> <button type="button" aria-label="随便聊聊" class="mobile-dropdown-title"><span class="title">随便聊聊</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Css/CSS.html" class="nav-link">
+  Css基础+css3
+</a></li><li class="dropdown-item"><!----> <a href="/Css/css属性.html" class="nav-link">
+  Css常用属性
+</a></li><li class="dropdown-item"><!----> <a href="/WebPack/WebPack.html" class="nav-link">
+  WebPack入门基础
+</a></li><li class="dropdown-item"><!----> <a href="/WebPack/WebPack面试题.html" class="nav-link">
+  WebPack面试题
+</a></li><li class="dropdown-item"><!----> <a href="/talk/talk.html" class="nav-link">
+  高频面试题
+</a></li><li class="dropdown-item"><!----> <a href="/talk/git.html" class="nav-link">
+  git使用
+</a></li><li class="dropdown-item"><!----> <a href="/talk/小程序.html" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/talk/uniapp购物车.html" class="nav-link">
+  uniapp购物车
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="React" class="dropdown-title"><span class="title">React</span> <span class="arrow down"></span></button> <button type="button" aria-label="React" class="mobile-dropdown-title"><span class="title">React</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/React/react.html" class="nav-link">
+  React基础语法
+</a></li><li class="dropdown-item"><!----> <a href="/React/hook.html" class="nav-link">
+  React-Hooks
+</a></li><li class="dropdown-item"><!----> <a href="/React/Redux.html" class="nav-link">
+  Redux
+</a></li><li class="dropdown-item"><!----> <a href="/React/React-Router.html" class="nav-link">
+  React-Router
+</a></li><li class="dropdown-item"><!----> <a href="/React/深入理解Redux.html" class="nav-link">
+  深入理解Redux
+</a></li><li class="dropdown-item"><!----> <a href="/React/Immutable.html" class="nav-link">
+  Immutable
+</a></li><li class="dropdown-item"><!----> <a href="/React/RouterV6.html" class="nav-link">
+  RouterV6
+</a></li><li class="dropdown-item"><!----> <a href="/talk/react-hooks中的过期闭包问题.html" class="nav-link">
+  react-hooks中的过期闭包问题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vue" class="mobile-dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Vue/Vue双向绑定原理.html" class="nav-link">
+  Vue双向绑定
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript" class="dropdown-title"><span class="title">JavaScript</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript" class="mobile-dropdown-title"><span class="title">JavaScript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/JavaScript/JavaScript.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/浅拷贝和深拷贝.html" class="nav-link">
+  浅拷贝和深拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/事件循环Eventloop.html" class="nav-link">
+  事件循环EventLoop
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/重绘回流.html" class="nav-link">
+  重绘回流(重排)
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/call、apply、bind方法.html" class="nav-link">
+  call、apply、bind方法
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/TypeScript.html" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/talk/Ajax、Fetch、Axios这三者有什么区别.html" class="nav-link">
+  Ajax、Fetch、Axios这三者有什么区别
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人项目" class="dropdown-title"><span class="title">个人项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人项目" class="mobile-dropdown-title"><span class="title">个人项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/个人项目/ReactEvents.html" class="nav-link">
+  ReactEvents
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Vue2-文章后台管理系统.html" class="nav-link">
+  Vue2-文章后台管理系统
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Vue2-MovieShop.html" class="nav-link">
+  Vue2-MovieShop
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Yi-MiniShop.html" class="nav-link">
+  Yi-MiniShop
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Netease-Cloud-Music.html" class="nav-link">
+  Netease-Cloud-Music(完成中)
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="随便聊聊" class="dropdown-title"><span class="title">随便聊聊</span> <span class="arrow down"></span></button> <button type="button" aria-label="随便聊聊" class="mobile-dropdown-title"><span class="title">随便聊聊</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Css/CSS.html" class="nav-link">
+  Css基础+css3
+</a></li><li class="dropdown-item"><!----> <a href="/Css/css属性.html" class="nav-link">
+  Css常用属性
+</a></li><li class="dropdown-item"><!----> <a href="/WebPack/WebPack.html" class="nav-link">
+  WebPack入门基础
+</a></li><li class="dropdown-item"><!----> <a href="/WebPack/WebPack面试题.html" class="nav-link">
+  WebPack面试题
+</a></li><li class="dropdown-item"><!----> <a href="/talk/talk.html" class="nav-link">
+  高频面试题
+</a></li><li class="dropdown-item"><!----> <a href="/talk/git.html" class="nav-link">
+  git使用
+</a></li><li class="dropdown-item"><!----> <a href="/talk/小程序.html" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/talk/uniapp购物车.html" class="nav-link">
+  uniapp购物车
+</a></li></ul></div></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="栈"><a href="#栈" class="header-anchor">#</a> 栈</h2> <p>栈是一种遵从后进先出（LIFO）原则的有序集合。新添加或待删除的元素都保存在栈的同
+一端，称作栈顶，另一端就叫栈底。在栈里，新元素都靠近栈顶，旧元素都接近栈底。</p> <h3 id="创建一个基于数组的栈"><a href="#创建一个基于数组的栈" class="header-anchor">#</a> 创建一个基于数组的栈</h3> <p>我们将创建一个类来表示栈。简单地从创建一个js 文件并声明 Stack 类开始。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">Stack</span> <span class="token punctuation">{</span>
+            <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment">//  向栈添加元素</span>
+            <span class="token function">push</span><span class="token punctuation">(</span><span class="token parameter">element</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment">//  从栈删除元素</span>
+            <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment">// 查看栈顶元素</span>
+            <span class="token function">peek</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment">// 查看栈的长度</span>
+            <span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">.</span>length
+            <span class="token punctuation">}</span>
+            <span class="token comment">// 检查栈是否为空</span>
+            <span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment">// 清空栈</span>
+            <span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+</code></pre></div><p>至此栈 已经实现了
+在深入了解栈的应用前，我们先来学习如何使用 Stack 类。首先需要初始化 Stack 类，然
+后验证一下栈是否为空（输出是 true，因为还没有往栈里添加元素）。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> stack <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Stack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>stack<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出为 true </span>
+
+<span class="token comment">// 接下来，往栈里添加一些元素（这里我们添加数字 5 和 8；你可以添加任意类型的元素）</span>
+
+stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+
+<span class="token comment">// 如果调用 peek 方法，将输出 8，因为它是往栈里添加的最后一个元素。 </span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>stack<span class="token punctuation">.</span><span class="token function">peek</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出 8 </span>
+
+<span class="token comment">// 再添加一个元素。 </span>
+stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>stack<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出 3 </span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>stack<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出 false </span>
+
+<span class="token comment">/* 我们往栈里添加了 11。如果调用 size 方法，输出为 3，因为栈里有三个元素5、8和11 
+如果我们调用 isEmpty 方法，会看到输出了 false（因为栈里有三个元素，不是空栈）最后， 
+我们再添加一个元素。 */</span>
+stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+</code></pre></div><p>下图描绘了目前为止我们对栈的操作，以及栈的当前状态。
+<img src="/1.png" alt="栈的当前状态" title="栈的当前状态"></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">//  然后，调用两次 pop 方法从栈里移除两个元素。</span>
+stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>stack<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出 2</span>
+</code></pre></div><p>在两次调用 pop 方法前，我们的栈里有四个元素。调用两次后，现在栈里仅剩下 5 和 8 了。
+下图描绘了这个执行过程。</p> <p><img src="/2.png" alt="image.png" title="栈的执行过程"></p> <h3 id="创建一个基于-javascript-对象的-stack-类"><a href="#创建一个基于-javascript-对象的-stack-类" class="header-anchor">#</a> 创建一个基于 JavaScript 对象的 Stack 类</h3> <p>首先像下面这样声明一个 Stack 类的 js 文件</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">Stack</span> <span class="token punctuation">{</span>
+            <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment">// 方法</span>
+        <span class="token punctuation">}</span>
+<span class="token comment">/* 在这个版本的 Stack 类中，我们将使用一个 count 属性来帮助我们记录栈的大小（也能帮 
+助我们从数据结构中添加和删除元素）。 */</span>
+</code></pre></div><h4 id="向栈中插入元素"><a href="#向栈中插入元素" class="header-anchor">#</a> 向栈中插入元素</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token function">push</span><span class="token punctuation">(</span><span class="token parameter">element</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">]</span> <span class="token operator">=</span> element
+                <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token operator">++</span>
+            <span class="token punctuation">}</span>
+
+<span class="token comment">/* 在JavaScript中对象是一系列键值对的集合。要向栈中添加元素，我们将使用count变量
+作为 items 对象的键名，插入的元素则是它的值。在向栈插入元素后，我们递增 count 变量。
+*/</span>
+
+<span class="token keyword">const</span> stack <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Stack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 在内部，items 包含的值和 count 属性如下所示。</span>
+items <span class="token operator">=</span> <span class="token punctuation">{</span> 
+ <span class="token number">0</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span> 
+ <span class="token number">1</span><span class="token operator">:</span> <span class="token number">8</span> 
+<span class="token punctuation">}</span><span class="token punctuation">;</span> 
+count <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="验证一个栈是否为空和它的大小"><a href="#验证一个栈是否为空和它的大小" class="header-anchor">#</a> 验证一个栈是否为空和它的大小</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// count 属性也表示栈的大小。因此，我们可以简单地返回 count 属性的值来实现 size 方法。</span>
+<span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+ <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+<span class="token comment">// 要验证栈是否为空，可以像下面这样判断 count 的值是否为 0。</span>
+<span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+ <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="从栈中弹出元素"><a href="#从栈中弹出元素" class="header-anchor">#</a> 从栈中弹出元素</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 手动实现移除元素的逻辑。pop 方法同样返回了从栈中移除的元素，它的实现如下。</span>
+ <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> <span class="token keyword">undefined</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token operator">--</span>
+                <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">]</span>
+                <span class="token keyword">delete</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">]</span>
+                <span class="token keyword">return</span> result
+            <span class="token punctuation">}</span>
+
+<span class="token comment">/* 首先，我们需要检验栈是否为空（行{1}）。如果为空，就返回 undefined。如果栈不为空 
+的话，我们会将count属性减 1（行{2}），并保存栈顶的值（行{3}），以便在删除它（行{4}） 
+之后将它返回（行{5}）。*/</span>
+</code></pre></div><h4 id="查看栈顶的值和将栈清空"><a href="#查看栈顶的值和将栈清空" class="header-anchor">#</a> 查看栈顶的值和将栈清空</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 要访问栈顶元素，需要将 count 属性减 1。那么我们来看看 peek 方法的代码。</span>
+<span class="token function">peek</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+ <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+ <span class="token keyword">return</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span> 
+ <span class="token punctuation">}</span> 
+ <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+<span class="token comment">// 要清空该栈，只需要将它的值复原为构造函数中使用的值即可。</span>
+<span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+ <span class="token keyword">this</span><span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span> 
+ <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="创建-tostring-方法"><a href="#创建-tostring-方法" class="header-anchor">#</a> 创建 toString 方法</h4> <p>在数组版本中，我们不需要关心 toString 方法的实现，因为数据结构可以直接使用数组已
+经提供的 toString 方法。对于使用对象的版本，我们将创建一个 toString 方法来像数组一
+样打印出栈的内容</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+ <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+ <span class="token keyword">return</span> <span class="token string">''</span><span class="token punctuation">;</span> 
+ <span class="token punctuation">}</span> 
+ <span class="token keyword">let</span> objString <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span> <span class="token comment">// {1} </span>
+ <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// {2} </span>
+ objString <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>objString<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">,</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span> <span class="token comment">// {3} </span>
+ <span class="token punctuation">}</span> 
+ <span class="token keyword">return</span> objString<span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* 如果栈是空的，我们只需返回一个空字符串即可。如果它不是空的，就需要用它底部的第一
+个元素作为字符串的初始值（行{1}），然后迭代整个栈的键（行{2}），一直到栈顶，添加一
+个逗号（,）以及下一个元素（行{3}）。如果栈只包含一个元素，行{2}和行{3}的代码将不会
+执行。 */</span>
+</code></pre></div><h2 id="队列"><a href="#队列" class="header-anchor">#</a> 队列</h2> <p>队列是遵循先进先出（FIFO，也称为先来先服务）原则的一组有序的项。队列在尾部添加新
+元素，并从顶部移除元素。最新添加的元素必须排在队列的末尾。最常见的队列的例子就是排队
+我们需要创建自己的类来表示一个队列。先从最基本的声明类开始。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code> <span class="token keyword">class</span> <span class="token class-name">Queue</span> <span class="token punctuation">{</span>
+            <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// {1} </span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// {2} </span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// {3} </span>
+            <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+
+<span class="token comment">// 我们将使用一个对象来存储我们的元素（行{3}）。</span>
+<span class="token comment">// 也可以声明一个 count 属性来帮助我们控制队列的大小（行{1}）。</span>
+<span class="token comment">// 此外，由于我们将要从队列前端移除元素，同样需要一个变量来帮助我们追踪第一个元素。因此，声明一个</span>
+<span class="token comment">// lowestCount 变量（行{2}）。</span>
+</code></pre></div><div class="language-haskell extra-class"><pre class="language-haskell"><code>接下来需要声明一些队列可用的方法。
+ <span class="token hvariable">enqueue</span><span class="token punctuation">(</span><span class="token hvariable">element</span><span class="token punctuation">(</span><span class="token hvariable">s</span><span class="token punctuation">)</span><span class="token punctuation">)</span>：向队列尾部添加一个（或多个）新的项。
+ <span class="token hvariable">dequeue</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：移除队列的第一项（即排在队列最前面的项）并返回被移除的元素。
+ <span class="token hvariable">peek</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：返回队列中第一个元素——最先被添加，也将是最先被移除的元素。队列不做
+任何变动（不移除元素，只返回元素信息——与 <span class="token constant">Stack</span> 类的 <span class="token hvariable">peek</span> 方法非常类似）。该方
+法在其他语言中也可以叫作 <span class="token hvariable">front</span> 方法。
+ <span class="token hvariable">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：如果队列中不包含任何元素，返回 <span class="token hvariable">true</span>，否则返回 <span class="token hvariable">false</span>。
+ <span class="token hvariable">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：返回队列包含的元素个数，与数组的 <span class="token builtin">length</span> 属性类似。
+</code></pre></div><div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">Queue</span> <span class="token punctuation">{</span>
+            <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// {1} </span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// {2} </span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// {3} </span>
+            <span class="token punctuation">}</span>
+            <span class="token comment">// 向队列添加元素</span>
+            <span class="token function">enqueue</span><span class="token punctuation">(</span><span class="token parameter">element</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">]</span> <span class="token operator">=</span> element
+                <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">++</span>
+              <span class="token comment">// this.items.unshift(element)</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment">// 从队列移除元素</span>
+            <span class="token function">dequeue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> <span class="token keyword">undefined</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount<span class="token punctuation">]</span>
+                <span class="token keyword">delete</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount<span class="token punctuation">]</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount<span class="token operator">++</span>
+                <span class="token keyword">return</span> result
+            <span class="token punctuation">}</span>
+            <span class="token comment">// 队列是否为空</span>
+            <span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token operator">-</span> <span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount <span class="token operator">===</span> <span class="token number">0</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment">// 队列的长度</span>
+            <span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">.</span>length
+            <span class="token punctuation">}</span>
+            <span class="token comment">// 查看队列头元素</span>
+            <span class="token function">peek</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> <span class="token keyword">undefined</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount<span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">const</span> queue <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Queue</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h4 id="检查队列是否为空并获取它的长度"><a href="#检查队列是否为空并获取它的长度" class="header-anchor">#</a> 检查队列是否为空并获取它的长度</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+ <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">-</span> <span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+
+<span class="token comment">//  要计算队列中有多少元素，我们只需要计算 count 和 lowestCount 之间的差值即可</span>
+</code></pre></div><p>假设 count 属性的值为 2，lowestCount 的值为 0。这表示在队列中有两个元素。然后，
+我们从队列中移除一个元素，lowestCount 的值会变为 1，count 的值仍然是 2。现在队列中
+只有一个元素了，以此类推。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 所以要实现 size 方法的话，我们只需要返回这个差值即可。</span>
+<span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+ <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">-</span> <span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount<span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+<span class="token comment">// 可以像下面这样写出 isEmpty 方法。</span>
+<span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+ <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+</code></pre></div><p>清空队列</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 要清空队列中的所有元素，我们可以调用 dequeue 方法直到它返回 undefined，也可以简</span>
+<span class="token comment">// 单地将队列中的属性值重设为和构造函数中的一样。</span>
+<span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+ <span class="token keyword">this</span><span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span> 
+ <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+ <span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+</code></pre></div><p>创建 **toString **方法
+完成！Queue 类实现好了。我们也可以像 Stack 类一样增加一个 toString 方法。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+ <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+ <span class="token keyword">return</span> <span class="token string">''</span><span class="token punctuation">;</span> 
+ <span class="token punctuation">}</span> 
+ <span class="token keyword">let</span> objString <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount<span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span> 
+ <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+ objString <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>objString<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">,</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span> 
+ <span class="token punctuation">}</span> 
+ <span class="token keyword">return</span> objString<span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+</code></pre></div><h2 id="双端队列数据结构"><a href="#双端队列数据结构" class="header-anchor">#</a> 双端队列数据结构</h2> <p>双端队列同时遵守了先进先出和后进先出原则，可以说它是把队列和栈相结合的一种数据结构。
+和之前一样，我们先声明一个 Deque 类及其构造函数。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">Deque</span> <span class="token punctuation">{</span> 
+ <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+ <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+ <span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+ <span class="token keyword">this</span><span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span> 
+ <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span>
+</code></pre></div><p>既然双端队列是一种特殊的队列，我们可以看到其构造函数中的部分代码和队列相同，包括相同的内部属性和以下方法：isEmpty、clear、size 和 toString
+由于双端队列允许在两端添加和移除元素，还会有下面几个方法。</p> <div class="language-haskell extra-class"><pre class="language-haskell"><code> <span class="token hvariable">addFront</span><span class="token punctuation">(</span><span class="token hvariable">element</span><span class="token punctuation">)</span>：该方法在双端队列前端添加新的元素。
+ <span class="token hvariable">addBack</span><span class="token punctuation">(</span><span class="token hvariable">element</span><span class="token punctuation">)</span>：该方法在双端队列后端添加新的元素（实现方法和 <span class="token constant">Queue</span> 类中的
+<span class="token hvariable">enqueue</span> 方法相同）。
+ <span class="token hvariable">removeFront</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：该方法会从双端队列前端移除第一个元素（实现方法和 <span class="token constant">Queue</span> 类中的
+<span class="token hvariable">dequeue</span> 方法相同）。
+ <span class="token hvariable">removeBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：该方法会从双端队列后端移除第一个元素（实现方法和 <span class="token constant">Stack</span> 类中的
+<span class="token hvariable">pop</span> 方法一样）。
+ <span class="token hvariable">peekFront</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：该方法返回双端队列前端的第一个元素（实现方法和 <span class="token constant">Queue</span> 类中的 
+<span class="token hvariable">peek</span>方法一样）。
+ <span class="token hvariable">peekBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span>：该方法返回双端队列后端的第一个元素（实现方法和 <span class="token constant">Stack</span> 类中的 
+<span class="token hvariable">peek</span>方法一样）
+</code></pre></div><h4 id="向双端队列的前端添加元素"><a href="#向双端队列的前端添加元素" class="header-anchor">#</a> 向双端队列的前端添加元素</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token function">addFront</span><span class="token punctuation">(</span><span class="token parameter">element</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+ <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// {1} </span>
+ 		<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">addBack</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+ <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// {2} </span>
+ 		<span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount<span class="token operator">--</span><span class="token punctuation">;</span> 
+		<span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount<span class="token punctuation">]</span> <span class="token operator">=</span> element<span class="token punctuation">;</span> 
+ <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> 
+ 		<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">;</span> i <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// {3} </span>
+ 			<span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 
+ <span class="token punctuation">}</span> 
+ 		<span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token operator">++</span><span class="token punctuation">;</span> 
+ 		<span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+ 		<span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> element<span class="token punctuation">;</span> <span class="token comment">// {4} </span>
+ <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span>
+</code></pre></div><p>要将一个元素添加到双端队列的前端，存在三种场景。
+第一种场景是这个双端队列是空的（行{1}）。在这种情况下，我们可以执行 addBack 方法。元素会被添加到双端队列的后端，在本例中也是双端队列的前端。addBack 方法已经有了增加 count 属性值的逻辑，因此我们可以复用它来避免重复编写代码。
+第二种场景是一个元素已经被从双端队列的前端移除（行{2}），也就是说 lowestCount 属 性会大于等于 1。这种情况下，我们只需要将 lowestCount 属性减 1 并将新元素的值放在这个 键的位置上即可
+第三种也是最后一种场景是 lowestCount 为 0 的情况。我们可以设置一个负值的键，同时 更新用于计算双端队列长度的逻辑，使其也能包含负键值。这种情况下，添加一个新元素的操作 仍然能保持最低的计算成本。为了便于演示，我们把本场景看作使用数组。要在第一位添加一个 新元素，我们需要将所有元素后移一位（行{3}）来空出第一个位置。由于我们不想丢失任何已 有的值，需要从最后一位开始迭代所有的值，并为元素赋上索引值减 1 位置的值。在所有的元素 都完成移动后，第一位将是空闲状态，这样就可以用需要添加的新元素来覆盖它了（行{4}）。</p> <h4 id="完整实现双端队列"><a href="#完整实现双端队列" class="header-anchor">#</a> 完整实现双端队列</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">Deque</span> <span class="token punctuation">{</span>
+            <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// {1} </span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// {2} </span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// {3} </span>
+            <span class="token punctuation">}</span>
+            <span class="token comment">// 向队列后端添加元素</span>
+            <span class="token function">addBack</span><span class="token punctuation">(</span><span class="token parameter">element</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">]</span> <span class="token operator">=</span> element
+                <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token operator">++</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment">// 向队列前端添加元素</span>
+            <span class="token function">addFront</span><span class="token punctuation">(</span><span class="token parameter">element</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// {1} </span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">addBack</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// {2} </span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount<span class="token operator">--</span><span class="token punctuation">;</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount<span class="token punctuation">]</span> <span class="token operator">=</span> element<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">;</span> i <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// {3} </span>
+                        <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token operator">++</span><span class="token punctuation">;</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> element<span class="token punctuation">;</span> <span class="token comment">// {4} </span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment">// 从队列前端移除元素</span>
+            <span class="token function">removeFront</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> <span class="token keyword">undefined</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount<span class="token punctuation">]</span>
+                <span class="token keyword">delete</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount<span class="token punctuation">]</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount<span class="token operator">++</span>
+                <span class="token keyword">return</span> result
+            <span class="token punctuation">}</span>
+            <span class="token comment">// 从队列后端移除元素</span>
+            <span class="token function">removeBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> <span class="token keyword">undefined</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token operator">--</span>
+                <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">]</span>
+                <span class="token keyword">delete</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">]</span>
+                <span class="token keyword">return</span> result
+            <span class="token punctuation">}</span>
+            <span class="token comment">// 队列是否为空</span>
+            <span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">0</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment">// 队列的长度</span>
+            <span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">-</span> <span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount
+            <span class="token punctuation">}</span>
+            <span class="token comment">// 查看队列头元素</span>
+            <span class="token function">peekFront</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>isEmpty<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> <span class="token keyword">undefined</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount<span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment">// 查看队列尾元素</span>
+            <span class="token function">peekBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>isEmpty<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> <span class="token keyword">undefined</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment">// 转换为字符串</span>
+            <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> <span class="token string">''</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">let</span> decount <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount<span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>lowestCount <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    decount <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>decount<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">,</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">return</span> decount
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">const</span> deque <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Deque</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>deque<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出 true </span>
+        deque<span class="token punctuation">.</span><span class="token function">addBack</span><span class="token punctuation">(</span><span class="token string">'John'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        deque<span class="token punctuation">.</span><span class="token function">addBack</span><span class="token punctuation">(</span><span class="token string">'Jack'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>deque<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// John, Jack </span>
+        deque<span class="token punctuation">.</span><span class="token function">addBack</span><span class="token punctuation">(</span><span class="token string">'Camila'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>deque<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// John, Jack, Camila </span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>deque<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出 3 </span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>deque<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出 false </span>
+        deque<span class="token punctuation">.</span><span class="token function">removeFront</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 移除 John </span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>deque<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Jack, Camila </span>
+        deque<span class="token punctuation">.</span><span class="token function">removeBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Camila 决定离开</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>deque<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Jack </span>
+        deque<span class="token punctuation">.</span><span class="token function">addFront</span><span class="token punctuation">(</span><span class="token string">'John'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// John 回来询问一些信息</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>deque<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// John, Jack</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.47b00d9e.js" defer></script><script src="/assets/js/2.63c13255.js" defer></script><script src="/assets/js/8.0d63082f.js" defer></script>
+  </body>
+</html>

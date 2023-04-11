@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>重绘 和 重排（回流） | Wiess&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/ohwo2.jpg">
+    <meta name="description" content="分享笔记，技术博客">
+    
+    <link rel="preload" href="/assets/css/0.styles.d6ad21ed.css" as="style"><link rel="preload" href="/assets/js/app.47b00d9e.js" as="script"><link rel="preload" href="/assets/js/2.63c13255.js" as="script"><link rel="preload" href="/assets/js/16.bbee7035.js" as="script"><link rel="prefetch" href="/assets/js/10.6f45d255.js"><link rel="prefetch" href="/assets/js/11.f8205a47.js"><link rel="prefetch" href="/assets/js/12.bd1b258c.js"><link rel="prefetch" href="/assets/js/13.d54cd060.js"><link rel="prefetch" href="/assets/js/14.9ccbfb79.js"><link rel="prefetch" href="/assets/js/15.8a848db8.js"><link rel="prefetch" href="/assets/js/17.a77f7b7a.js"><link rel="prefetch" href="/assets/js/18.2505abdc.js"><link rel="prefetch" href="/assets/js/19.3b9dec56.js"><link rel="prefetch" href="/assets/js/20.fbcc61e3.js"><link rel="prefetch" href="/assets/js/21.76693485.js"><link rel="prefetch" href="/assets/js/22.015311e2.js"><link rel="prefetch" href="/assets/js/23.4965c38b.js"><link rel="prefetch" href="/assets/js/24.7d8fcfee.js"><link rel="prefetch" href="/assets/js/25.1fad7845.js"><link rel="prefetch" href="/assets/js/26.78bfc509.js"><link rel="prefetch" href="/assets/js/27.4ccd57ee.js"><link rel="prefetch" href="/assets/js/28.f9057288.js"><link rel="prefetch" href="/assets/js/29.ebde7145.js"><link rel="prefetch" href="/assets/js/3.a4d9c696.js"><link rel="prefetch" href="/assets/js/30.30876a1e.js"><link rel="prefetch" href="/assets/js/31.6b81c6bf.js"><link rel="prefetch" href="/assets/js/32.37b3d365.js"><link rel="prefetch" href="/assets/js/33.f2cc1a34.js"><link rel="prefetch" href="/assets/js/34.c3864ec8.js"><link rel="prefetch" href="/assets/js/35.d8109eef.js"><link rel="prefetch" href="/assets/js/36.964f8786.js"><link rel="prefetch" href="/assets/js/37.97f0ce0a.js"><link rel="prefetch" href="/assets/js/38.0fab69ca.js"><link rel="prefetch" href="/assets/js/4.94733d25.js"><link rel="prefetch" href="/assets/js/5.2ea06e07.js"><link rel="prefetch" href="/assets/js/6.8d81f0ec.js"><link rel="prefetch" href="/assets/js/7.1e08345a.js"><link rel="prefetch" href="/assets/js/8.0d63082f.js"><link rel="prefetch" href="/assets/js/9.f8d4bff4.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d6ad21ed.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Wiess's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="React" class="dropdown-title"><span class="title">React</span> <span class="arrow down"></span></button> <button type="button" aria-label="React" class="mobile-dropdown-title"><span class="title">React</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/React/react.html" class="nav-link">
+  React基础语法
+</a></li><li class="dropdown-item"><!----> <a href="/React/hook.html" class="nav-link">
+  React-Hooks
+</a></li><li class="dropdown-item"><!----> <a href="/React/Redux.html" class="nav-link">
+  Redux
+</a></li><li class="dropdown-item"><!----> <a href="/React/React-Router.html" class="nav-link">
+  React-Router
+</a></li><li class="dropdown-item"><!----> <a href="/React/深入理解Redux.html" class="nav-link">
+  深入理解Redux
+</a></li><li class="dropdown-item"><!----> <a href="/React/Immutable.html" class="nav-link">
+  Immutable
+</a></li><li class="dropdown-item"><!----> <a href="/React/RouterV6.html" class="nav-link">
+  RouterV6
+</a></li><li class="dropdown-item"><!----> <a href="/talk/react-hooks中的过期闭包问题.html" class="nav-link">
+  react-hooks中的过期闭包问题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vue" class="mobile-dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Vue/Vue双向绑定原理.html" class="nav-link">
+  Vue双向绑定
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript" class="dropdown-title"><span class="title">JavaScript</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript" class="mobile-dropdown-title"><span class="title">JavaScript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/JavaScript/JavaScript.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/浅拷贝和深拷贝.html" class="nav-link">
+  浅拷贝和深拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/事件循环Eventloop.html" class="nav-link">
+  事件循环EventLoop
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/重绘回流.html" class="nav-link">
+  重绘回流(重排)
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/call、apply、bind方法.html" class="nav-link">
+  call、apply、bind方法
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/TypeScript.html" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/talk/Ajax、Fetch、Axios这三者有什么区别.html" class="nav-link">
+  Ajax、Fetch、Axios这三者有什么区别
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人项目" class="dropdown-title"><span class="title">个人项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人项目" class="mobile-dropdown-title"><span class="title">个人项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/个人项目/ReactEvents.html" class="nav-link">
+  ReactEvents
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Vue2-文章后台管理系统.html" class="nav-link">
+  Vue2-文章后台管理系统
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Vue2-MovieShop.html" class="nav-link">
+  Vue2-MovieShop
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Yi-MiniShop.html" class="nav-link">
+  Yi-MiniShop
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Netease-Cloud-Music.html" class="nav-link">
+  Netease-Cloud-Music(完成中)
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="随便聊聊" class="dropdown-title"><span class="title">随便聊聊</span> <span class="arrow down"></span></button> <button type="button" aria-label="随便聊聊" class="mobile-dropdown-title"><span class="title">随便聊聊</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Css/CSS.html" class="nav-link">
+  Css基础+css3
+</a></li><li class="dropdown-item"><!----> <a href="/Css/css属性.html" class="nav-link">
+  Css常用属性
+</a></li><li class="dropdown-item"><!----> <a href="/WebPack/WebPack.html" class="nav-link">
+  WebPack入门基础
+</a></li><li class="dropdown-item"><!----> <a href="/WebPack/WebPack面试题.html" class="nav-link">
+  WebPack面试题
+</a></li><li class="dropdown-item"><!----> <a href="/talk/talk.html" class="nav-link">
+  高频面试题
+</a></li><li class="dropdown-item"><!----> <a href="/talk/git.html" class="nav-link">
+  git使用
+</a></li><li class="dropdown-item"><!----> <a href="/talk/小程序.html" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/talk/uniapp购物车.html" class="nav-link">
+  uniapp购物车
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="React" class="dropdown-title"><span class="title">React</span> <span class="arrow down"></span></button> <button type="button" aria-label="React" class="mobile-dropdown-title"><span class="title">React</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/React/react.html" class="nav-link">
+  React基础语法
+</a></li><li class="dropdown-item"><!----> <a href="/React/hook.html" class="nav-link">
+  React-Hooks
+</a></li><li class="dropdown-item"><!----> <a href="/React/Redux.html" class="nav-link">
+  Redux
+</a></li><li class="dropdown-item"><!----> <a href="/React/React-Router.html" class="nav-link">
+  React-Router
+</a></li><li class="dropdown-item"><!----> <a href="/React/深入理解Redux.html" class="nav-link">
+  深入理解Redux
+</a></li><li class="dropdown-item"><!----> <a href="/React/Immutable.html" class="nav-link">
+  Immutable
+</a></li><li class="dropdown-item"><!----> <a href="/React/RouterV6.html" class="nav-link">
+  RouterV6
+</a></li><li class="dropdown-item"><!----> <a href="/talk/react-hooks中的过期闭包问题.html" class="nav-link">
+  react-hooks中的过期闭包问题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vue" class="mobile-dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Vue/Vue双向绑定原理.html" class="nav-link">
+  Vue双向绑定
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript" class="dropdown-title"><span class="title">JavaScript</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript" class="mobile-dropdown-title"><span class="title">JavaScript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/JavaScript/JavaScript.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/浅拷贝和深拷贝.html" class="nav-link">
+  浅拷贝和深拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/事件循环Eventloop.html" class="nav-link">
+  事件循环EventLoop
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/重绘回流.html" class="nav-link">
+  重绘回流(重排)
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/call、apply、bind方法.html" class="nav-link">
+  call、apply、bind方法
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/TypeScript.html" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/talk/Ajax、Fetch、Axios这三者有什么区别.html" class="nav-link">
+  Ajax、Fetch、Axios这三者有什么区别
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人项目" class="dropdown-title"><span class="title">个人项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人项目" class="mobile-dropdown-title"><span class="title">个人项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/个人项目/ReactEvents.html" class="nav-link">
+  ReactEvents
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Vue2-文章后台管理系统.html" class="nav-link">
+  Vue2-文章后台管理系统
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Vue2-MovieShop.html" class="nav-link">
+  Vue2-MovieShop
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Yi-MiniShop.html" class="nav-link">
+  Yi-MiniShop
+</a></li><li class="dropdown-item"><!----> <a href="/个人项目/Netease-Cloud-Music.html" class="nav-link">
+  Netease-Cloud-Music(完成中)
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="随便聊聊" class="dropdown-title"><span class="title">随便聊聊</span> <span class="arrow down"></span></button> <button type="button" aria-label="随便聊聊" class="mobile-dropdown-title"><span class="title">随便聊聊</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Css/CSS.html" class="nav-link">
+  Css基础+css3
+</a></li><li class="dropdown-item"><!----> <a href="/Css/css属性.html" class="nav-link">
+  Css常用属性
+</a></li><li class="dropdown-item"><!----> <a href="/WebPack/WebPack.html" class="nav-link">
+  WebPack入门基础
+</a></li><li class="dropdown-item"><!----> <a href="/WebPack/WebPack面试题.html" class="nav-link">
+  WebPack面试题
+</a></li><li class="dropdown-item"><!----> <a href="/talk/talk.html" class="nav-link">
+  高频面试题
+</a></li><li class="dropdown-item"><!----> <a href="/talk/git.html" class="nav-link">
+  git使用
+</a></li><li class="dropdown-item"><!----> <a href="/talk/小程序.html" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/talk/uniapp购物车.html" class="nav-link">
+  uniapp购物车
+</a></li></ul></div></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="重绘-和-重排-回流"><a href="#重绘-和-重排-回流" class="header-anchor">#</a> 重绘 和 重排（回流）</h2> <p>重绘不一定导致重排，但重排一定会导致重绘
+重排（Reflow） &amp;&amp; 重绘（Redraw）会付出高昂的性能代价</p> <h3 id="重绘"><a href="#重绘" class="header-anchor">#</a> 重绘</h3> <p><strong>重绘 （Redraw）</strong>：某些元素的外观被改变所触发的浏览器行为（重新计算节点在屏幕中的绝对位置并渲染的过程）； 例如：修改元素的填充颜色，会触发重绘；</p> <h3 id="重排-回流"><a href="#重排-回流" class="header-anchor">#</a> 重排（回流）</h3> <p><strong>重排 （Reflow）</strong>：重新生成布局，重新排列元素（重新计算各节点和css具体的大小和位置：渲染树需要重新计算所有受影响的节点**）；例如：改元素的宽高，会触发重排；
+<strong>通过两者概念区别明显得知，重排要比重绘的成本大得多，我们应该尽量减少重排操作，减少页面性能消耗</strong></p> <h3 id="那些操作会导致重绘与重排-❓"><a href="#那些操作会导致重绘与重排-❓" class="header-anchor">#</a> 那些操作会导致重绘与重排 ❓</h3> <p>下面情况会发生重绘：</p> <ul><li>color</li> <li>border-style</li> <li>border-radius</li> <li>text-decoration</li> <li>box-shadow</li> <li>outline</li> <li>background</li> <li>...</li></ul> <p>下面情况会发生重排：</p> <ul><li>页面初始渲染，这是开销最大的一次重排;</li> <li>添加/删除可见的DOM元素;</li> <li>改变元素位置;</li> <li>改变元素尺寸，比如边距、填充、边框、宽度和高度等;</li> <li>改变元素内容，比如文字数量，图片大小等;</li> <li>改变元素字体大小;</li> <li>改变浏览器窗口尺寸，比如resize事件发生时;</li> <li>激活CSS伪类（例如：:hover）;</li> <li>设置 style 属性的值，因为通过设置style属性改变结点样式的话，每一次设置都会触发一次reflow;</li> <li>查询某些属性或调用某些计算方法：offsetWidth、offsetHeight等，除此之外，当我们调用getComputedStyl方法，或者IE里的 currentStyle 时，也会触发重排，原理是一样的，都为求一个“即时性”和“准确性”;</li> <li>...</li></ul> <h3 id="重排影响的范围"><a href="#重排影响的范围" class="header-anchor">#</a> 重排影响的范围:</h3> <ul><li><strong>全局范围（全局布局）</strong>：从根节点html开始对整个渲染树进行重新布局；</li> <li><strong>局部范围（局部布局）</strong>：对渲染树的某部分或某一个渲染对象进行重新布局；</li></ul> <h3 id="优化建议"><a href="#优化建议" class="header-anchor">#</a> 优化建议:</h3> <p>核心观念： 减少重排次数和减小重排范围</p> <h4 id="样式集中改变-减少重排次数"><a href="#样式集中改变-减少重排次数" class="header-anchor">#</a> 样式集中改变（减少重排次数）：</h4> <div class="language-html extra-class"><pre class="language-html"><code><span class="token comment">&lt;!-- html --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>demo<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  我是demo
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// javascript</span>
+<span class="token comment">// renderEle.style 逐个添加/修改属性值</span>
+<span class="token keyword">const</span> renderEle <span class="token operator">=</span> d、ocument<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'demo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">'red'</span><span class="token punctuation">;</span> <span class="token comment">// 导致重绘</span>
+renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>background<span class="token operator">=</span> <span class="token string">'#ccc'</span><span class="token punctuation">;</span> <span class="token comment">// 导致重绘</span>
+renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>padding <span class="token operator">=</span> <span class="token string">'15px 20px'</span><span class="token punctuation">;</span> <span class="token comment">// 导致重排（重排会引起重绘）</span>
+</code></pre></div><p>以上操作会导致 3次重绘 1次重排; 可以动态添加class，只会导致1次重排（重排会引起重绘），从而减少重绘次数;
+可以合并为：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// javascript</span>
+document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'demo'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">'demo'</span><span class="token punctuation">;</span> 
+<span class="token comment">// 添加class 统一添加/修改样式</span>
+</code></pre></div><div class="language-css extra-class"><pre class="language-css"><code><span class="token comment">/* css */</span>
+<span class="token selector">.demo</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #ccc<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 15px 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>将 DOM 离线（减少重排次数）
+离线操作DOM：当对DOM 节点有较大改动的时候，我们先将元素脱离文档流，然后对元素进行操作，最后再把操作后的元素放回文档流。</p> <ol><li>修改DOM节点的display属性，临时将此节点从文档流中脱离，然后再恢复；</li></ol> <div class="language-html extra-class"><pre class="language-html"><code><span class="token comment">&lt;!-- html --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>demo<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  我是demo
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>需要频繁操作DOM 修改style</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>  <span class="token comment">// javascript</span>
+  <span class="token comment">// 第一次操作修改 color、background、padding</span>
+  <span class="token keyword">const</span> renderEle <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'demo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">'red'</span><span class="token punctuation">;</span> <span class="token comment">// 导致重绘</span>
+  renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>background<span class="token operator">=</span> <span class="token string">'#ccc'</span><span class="token punctuation">;</span> <span class="token comment">// 导致重绘</span>
+  renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>padding <span class="token operator">=</span> <span class="token string">'15px 20px'</span><span class="token punctuation">;</span> <span class="token comment">// 导致重排（重排会引起重绘）</span>
+  <span class="token comment">// ...</span>
+  <span class="token comment">// 第二次操作修改 marginLeft、marginTop</span>
+  <span class="token keyword">const</span> renderEle <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'demo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>marginLeft <span class="token operator">=</span> <span class="token string">'15px'</span><span class="token punctuation">;</span> <span class="token comment">// 导致重排（重排会引起重绘）</span>
+  renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>marginTop <span class="token operator">=</span> <span class="token string">'15px'</span><span class="token punctuation">;</span> <span class="token comment">// 导致重排（重排会引起重绘）</span>
+  <span class="token comment">// ...</span>
+  <span class="token comment">// 第三次操作修改 border</span>
+  <span class="token keyword">const</span> renderEle <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'demo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>border <span class="token operator">=</span> <span class="token string">'2px solid #ccc'</span><span class="token punctuation">;</span> <span class="token comment">// 导致重排（重排会引起重绘）</span>
+</code></pre></div><p>以上操作触发多次重排、重绘; 可以将<strong>renderEle</strong>进行离线操作; 修改如下：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>  <span class="token comment">// javascript</span>
+  <span class="token keyword">const</span> renderEle <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'demo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 第一次操作修改 color、background、padding</span>
+  renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'none'</span><span class="token punctuation">;</span> <span class="token comment">// 导致重排（重排会引起渲）</span>
+  renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">'red'</span><span class="token punctuation">;</span> <span class="token comment">// DOM不存在渲染树上不会引起重排、重绘</span>
+  renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>background<span class="token operator">=</span> <span class="token string">'#ccc'</span><span class="token punctuation">;</span><span class="token comment">// DOM不存在渲染树上不会引起重排、重绘</span>
+  renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>padding <span class="token operator">=</span> <span class="token string">'15px 20px'</span><span class="token punctuation">;</span><span class="token comment">// DOM不存在渲染树上不会引起重排、重绘</span>
+  <span class="token comment">// ...</span>
+  <span class="token comment">// 第二次操作修改 marginLeft、marginTop</span>
+  renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>marginLeft <span class="token operator">=</span> <span class="token string">'15px'</span><span class="token punctuation">;</span><span class="token comment">// DOM不存在渲染树上不会引起重排、重绘</span>
+  renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>marginTop <span class="token operator">=</span> <span class="token string">'15px'</span><span class="token punctuation">;</span><span class="token comment">// DOM不存在渲染树上不会引起重排、重绘</span>
+  <span class="token comment">// ...</span>
+  <span class="token comment">// 第三次操作修改 border</span>
+  renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>border <span class="token operator">=</span> <span class="token string">'2px solid #ccc'</span><span class="token punctuation">;</span><span class="token comment">// DOM不存在渲染树上不会引起重排、重绘</span>
+  renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'block'</span><span class="token punctuation">;</span><span class="token comment">// 导致重排（重排会引起渲）</span>
+</code></pre></div><p>以上对隐藏的DOM元素操作不会引发其他元素的重排，这样只在隐藏和显示时触发2次重排。</p> <h4 id="脱离文档流-使用-absolute-或-fixed-脱离文档流-减小重排范围"><a href="#脱离文档流-使用-absolute-或-fixed-脱离文档流-减小重排范围" class="header-anchor">#</a> 脱离文档流： 使用 absolute 或 fixed 脱离文档流（<strong>减小重排范围</strong>）：</h4> <div class="language-html extra-class"><pre class="language-html"><code><span class="token comment">&lt;!-- html --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>demo<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>demo-one<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    我是demo 1号
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>demo-two<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    我是demo 2号
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>demo-there<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    我是demo 3号
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// javascript</span>
+<span class="token keyword">const</span> renderEle <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'demo-one'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>padding <span class="token operator">=</span> <span class="token string">'15px 20px'</span><span class="token punctuation">;</span> <span class="token comment">// 导致重排（重排会引起重绘）</span>
+renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>height <span class="token operator">=</span> <span class="token string">'60px'</span><span class="token punctuation">;</span> <span class="token comment">// 导致重排（重排会引起重绘）</span>
+</code></pre></div><p>将需要重排的元素，position属性设为absolute或fixed(某些特殊场合)，减小重排范围。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// javascript</span>
+<span class="token keyword">const</span> renderEle <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'demo-one'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>position <span class="token operator">=</span> <span class="token string">'fixed'</span><span class="token punctuation">;</span> <span class="token comment">// 导致重排（重排会引起重绘）</span>
+renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>padding <span class="token operator">=</span> <span class="token string">'15px 20px'</span><span class="token punctuation">;</span> <span class="token comment">// 导致重排（只有当前元素）</span>
+renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>height <span class="token operator">=</span> <span class="token string">'60px'</span><span class="token punctuation">;</span> <span class="token comment">// 导致重排（只有当前元素）</span>
+</code></pre></div><p>这样此DOM元素就脱离了文档流，它的变化不会影响到其他元素。</p> <h4 id="善用内存-在内存中多次操作dom-再整个添加到dom树-减小重排范围"><a href="#善用内存-在内存中多次操作dom-再整个添加到dom树-减小重排范围" class="header-anchor">#</a> 善用内存：在内存中多次操作DOM，再整个添加到DOM树(<strong>减小重排范围</strong>)</h4> <p>举例：异步请求接口获取数据，动态渲染到页面</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token comment">&lt;!-- html --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>demo<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>father<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>我是0号,我后面还有1号、2号、3号、4号、5号<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// javascript</span>
+<span class="token keyword">const</span> ulEle <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;father&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token function">setTimeout</span><span class="token punctuation">(</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  arr <span class="token operator">=</span> <span class="token string">&quot;我是0号,我后面还有1号，2号，3号，4号，5号&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;我是2号&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;我是3号&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;我是4号&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;我是5号&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 我是动态获取的</span>
+  arr<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">element</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> childNode <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'li'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    childNode<span class="token punctuation">.</span>innerText <span class="token operator">=</span> element<span class="token punctuation">;</span>
+    ulEle<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>childNode<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 每一次都会引起重排（重排会引起重绘）</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span>
+</code></pre></div><p>导致多次重排； 可以进行以下修改(构建整个ul，而不是循环添加li)：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token comment">&lt;!-- html --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>demo<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// javascript</span>
+<span class="token keyword">const</span> ulEle <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;demo&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> childUlNode <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'ul'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;我是0号,我后面还有1号，2号，3号，4号，5号&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;我是1号&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;我是2号&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;我是3号&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;我是4号&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;我是5号&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 我是动态获取的</span>
+   arr<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">element</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+     <span class="token keyword">const</span> childLiNode <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'li'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     childLiNode<span class="token punctuation">.</span>innerText <span class="token operator">=</span> element<span class="token punctuation">;</span>
+     childUlNode<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>childLiNode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span>
+ulEle<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>childUlNode<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 只会引起一次重排（重排会引起重绘）</span>
+</code></pre></div><h4 id="读写分离-将写入的值缓存-读取缓存的值-减少重排次数"><a href="#读写分离-将写入的值缓存-读取缓存的值-减少重排次数" class="header-anchor">#</a> 读写分离：将写入的值缓存，读取缓存的值（减少重排次数）</h4> <p>有一些浏览器针对重排做出来优化。
+比如Opera：当你触发重排的条件到达一定量的时候， 或者等到一定时间的时候，或者等一个线程结束，再一起进行重排；但除了渲染树的直接变化，当获取一些属性时，浏览器为取得正确的值也会触发重排。这样就使得浏览器的优化失效了；</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token comment">&lt;!-- html --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>demo<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  我是demo
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-javascript extra-class"><pre class="language-javascript"><code>  <span class="token comment">// javascript</span>
+  <span class="token keyword">const</span> offsetWidth <span class="token operator">=</span> <span class="token string">'100px'</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> renderEle <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'demo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>offsetWidth <span class="token operator">=</span> offsetWidth <span class="token comment">// 导致重绘(写入)</span>
+  <span class="token keyword">const</span> tempoOffsetWidth <span class="token operator">=</span> renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>offsetWidth <span class="token comment">// 读取可能会导致重排</span>
+</code></pre></div><p>上述代码中可使用读写分离（写入值的时候进行缓存），避免多次重排；</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>  <span class="token comment">// javascript</span>
+  <span class="token keyword">const</span> offsetWidth <span class="token operator">=</span> <span class="token string">'100px'</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> renderEle <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'demo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  renderEle<span class="token punctuation">.</span>style<span class="token punctuation">.</span>offsetWidth <span class="token operator">=</span> offsetWidth <span class="token comment">// 导致重绘(写入)</span>
+  <span class="token keyword">const</span> tempoOffsetWidth <span class="token operator">=</span> renderEle； <span class="token comment">// 避免直接读取offsetWidth</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.47b00d9e.js" defer></script><script src="/assets/js/2.63c13255.js" defer></script><script src="/assets/js/16.bbee7035.js" defer></script>
+  </body>
+</html>
