@@ -25,6 +25,7 @@ module.exports = {
             { text: 'Vue', 
             items:[
                 {text:'Vue双向绑定', link: '/Vue/Vue双向绑定原理.md'},
+                {text:'Vue3 setup语法糖', link: '/Vue/Vue3 setup语法糖.md'},
             ]
             },
             { text: 'JavaScript', 
