@@ -12,7 +12,7 @@ module.exports = {
         nav: [
             { text: 'React', 
             items:[
-                {text:'React基础语法', link: '/React/react.md'},
+                {text:'React的基础语法', link: '/React/react.md'},
                 {text:'React-Hooks', link: '/React/hook.md'},
                 {text:'Redux', link: '/React/Redux.md'},
                 {text:'React-Router', link: '/React/React-Router.md'},
