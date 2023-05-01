@@ -12,7 +12,7 @@ module.exports = {
         nav: [
             { text: 'React', 
             items:[
-                {text:'React的基础语法', link: '/React/react.md'},
+                {text:'React基础语法', link: '/React/react.md'},
                 {text:'React-Hooks', link: '/React/hook.md'},
                 {text:'Redux', link: '/React/Redux.md'},
                 {text:'React-Router', link: '/React/React-Router.md'},
@@ -24,6 +24,12 @@ module.exports = {
             },
             { text: 'Vue', 
             items:[
+                {text:'Vue基础', link: '/Vue/Vue基础.md'},
+                {text:'Vue组件化', link: '/Vue/Vue组件化.md'},
+                {text:'Vue-router', link: '/Vue/Vue-router.md'},
+                {text:'Vue状态管理', link: '/Vue/Vue状态管理.md'},
+                {text:'Vue性能优化', link: '/Vue/Vue性能优化.md'},
+                {text:'Mixins混入', link: '/Vue/Mixins混入.md'},
                 {text:'Vue双向绑定', link: '/Vue/Vue双向绑定原理.md'},
                 {text:'Vue3 setup语法糖', link: '/Vue/Vue3 setup语法糖.md'},
             ]
@@ -34,7 +40,9 @@ module.exports = {
                 {text:'浅拷贝和深拷贝', link: '/JavaScript/浅拷贝和深拷贝.md'},
                 {text:'事件循环EventLoop', link: '/JavaScript/事件循环Eventloop.md'},
                 {text:'重绘回流(重排)', link: '/JavaScript/重绘回流.md'},
-                {text:'call、apply、bind方法', link: '/JavaScript/call、apply、bind方法.md'},
+                {text:'call、apply、bind方法', link: '/JavaScript/call、apply、bind.md'},
+                {text:'设计模式', link: '/JavaScript/设计模式.md'},
+                {text:'手写promise', link: '/JavaScript/手写promise.md'},
                 {text:'TypeScript', link: '/JavaScript/TypeScript.md'},
                 {text:'Ajax、Fetch、Axios这三者有什么区别', link: '/talk/Ajax、Fetch、Axios这三者有什么区别.md'},
             ]
@@ -58,6 +66,7 @@ module.exports = {
                 {text:'git使用', link: '/talk/git.md'},
                 {text:'小程序', link: '/talk/小程序.md'},
                 {text:'uniapp购物车', link: '/talk/uniapp购物车.md'},
+                {text:'三种排序算法', link: '/talk/三种排序算法.md'},
             ]
             },
         ],
