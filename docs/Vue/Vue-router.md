@@ -1,5 +1,5 @@
 ## 一、认识路由
-##### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#_1%E3%80%91%E4%BB%80%E4%B9%88%E6%98%AF%E8%B7%AF%E7%94%B1%EF%BC%9F)1】什么是路由？
+##### 1】什么是路由？
 **路由（routing）**就是通过互联的网络把信息从源地址传输到目的地址的活动。--- 维基百科
 路由器提供了两种机制：路由和转送。
 
@@ -7,19 +7,19 @@
 - 转送将**输入端**的数据转移到合适的**输出端**
 
 路由中有个非常重要的概念叫路由表，路由表本质上就是一个映射表，决定了数据包的指向。
-##### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#_2%E3%80%91%E5%90%8E%E7%AB%AF%E6%B8%B2%E6%9F%93%E5%92%8C%E5%90%8E%E7%AB%AF%E8%B7%AF%E7%94%B1)2】后端渲染和后端路由
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A0%E5%90%8E%E7%AB%AF%E6%B8%B2%E6%9F%93)①后端渲染
+##### 2】后端渲染和后端路由
+###### ①后端渲染
 jsp/php jsp：java server page ->html+css+java->java代码的作用就是从数据库中读取数据，并且将它动态的放在页面中。
 **这种后端渲染也就是通过jsp动态网页里面写java代码获取数据库中的数据，然后直接在服务器中渲染成网页。然而客服端中请求到的网页中就只有html+css（也就是只能得到一个结果）。**
 基本过程：
 1.客户端输入访问地址向服务器发出请求
 2.服务器收到客户端发送的url请求，然后通过正则对该url进行匹配，并且交给后端的controller进行处理，将jsp动态页面在服务器中渲染出来，再将结果返回给前端客户端
 3.客户端收到服务器渲染的静态网页
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A1%E5%90%8E%E7%AB%AF%E8%B7%AF%E7%94%B1)②后端路由
+###### ②后端路由
 **后端服务器处理url和jsp页面之间的映射关系**（用web.xml配置路由）
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/32841606/1682926155463-ca7d931e-bc2e-4345-aad2-48955ed6398d.png#averageHue=%23f5f5f4&clientId=u8d8a8c60-650d-4&from=paste&id=u9b29e9a1&originHeight=676&originWidth=1437&originalType=url&ratio=1.25&rotation=0&showTitle=false&size=330733&status=done&style=none&taskId=uc26566a7-dc33-4768-9ec5-b57590247c7&title=)
-##### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#_3%E3%80%91%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1%E9%98%B6%E6%AE%B5)3】前端路由阶段
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A0%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E9%98%B6%E6%AE%B5)①前后端分离阶段
+##### 3】前端路由阶段
+###### ①前后端分离阶段
 
 - 随着Ajax的出现，有了前后端分离的开发模式。
 - 后端只提供API来返回数据，前端通过Ajax获取数据，并且可以通过JavaScript将数据渲染到页面中。
@@ -28,32 +28,32 @@ jsp/php jsp：java server page ->html+css+java->java代码的作用就是从数�
 - 目前很多网站依然采用这种模式开发。
 
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/32841606/1682926155480-fbe354a1-1f52-446a-8e99-c65bd1c07c20.png#averageHue=%23f4f4f4&clientId=u8d8a8c60-650d-4&from=paste&id=ub1de19fc&originHeight=681&originWidth=1433&originalType=url&ratio=1.25&rotation=0&showTitle=false&size=347376&status=done&style=none&taskId=u1cfe46eb-aa7e-4bda-973f-b94e98c046e&title=)
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A1spa-single-page-web-application-%E5%8D%95%E9%A1%B5%E9%9D%A2%E5%AF%8C%E5%BA%94%E7%94%A8%E9%98%B6%E6%AE%B5)②SPA(single page web application)单页面富应用阶段
+###### ②SPA(single page web application)单页面富应用阶段
 
 - 其实SPA最重要的特点就是在前后端分离的基础上加了一层前端路由。
 - 也就是前端来维护一套路由规则。
 
 在前端路由的基础上，静态资源服务器中就不像前后端分离阶段的一个url对应一个html+css+js页面，取而代之的是index.html+css+js都只有一个。
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/32841606/1682926155348-55473b94-8c93-4a70-964b-aafe2996f5de.png#averageHue=%23f4f3f3&clientId=u8d8a8c60-650d-4&from=paste&id=ue7ebee29&originHeight=673&originWidth=1446&originalType=url&ratio=1.25&rotation=0&showTitle=false&size=253033&status=done&style=none&taskId=u0dd52c3d-372f-4316-b397-1ac1475e2cc&title=)
-##### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#_4%E3%80%91%E5%89%8D%E7%AB%AF%E6%B8%B2%E6%9F%93%E5%92%8C%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1)4】前端渲染和前端路由
+##### 4】前端渲染和前端路由
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/32841606/1682926155181-69ce6110-1806-4ffd-a952-e06d91cd424b.png#averageHue=%23f0e5e3&clientId=u8d8a8c60-650d-4&from=paste&id=u424f1937&originHeight=399&originWidth=921&originalType=url&ratio=1.25&rotation=0&showTitle=false&size=264645&status=done&style=none&taskId=u9dc07e2b-0013-4a52-b21a-1839e475598&title=)
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A0%E5%89%8D%E7%AB%AF%E6%B8%B2%E6%9F%93)①前端渲染
+###### ①前端渲染
 **浏览器中显示网页中的大部分内容，都是由前端写的js代码在浏览器中执行，最终渲染出来的网页。**
 基本过程：
 1.客户端输入访问地址向服务器发出请求
 2.（服务器分为静态资源服务器和提供API接口的服务器）静态资源服务器（在静态资源服务器中一个url对应一个html+css+js页面）会给客户端返回html+css+js代码，其中html+css浏览器可以直接渲染，js代码由浏览器执行，这里的js代码中会有一些向服务器API接口的请求
 3.提供API接口的服务器再将对应的API接口的数据返回到客户端浏览器上，然后通过浏览器来执行js代码将数据渲染到页面上
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A1%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1)②前端路由
+###### ②前端路由
 vue-router：管理url ->页面的映射关系
 前端路由的核心：改变URL，但是页面不进行整体的刷新
-##### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#_5%E3%80%91%E4%B8%8D%E5%90%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AF%B7%E6%B1%82%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E4%BF%AE%E6%94%B9url%EF%BC%9Alocation%E7%9A%84hash%E6%A8%A1%E5%BC%8F%E5%92%8Chtml5%E7%9A%84history%E6%A8%A1%E5%BC%8F)5】不向服务器请求的情况下修改url：location的hash模式和html5的history模式
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A0location-%E5%AF%B9%E8%B1%A1)①[Location 对象](https://www.w3school.com.cn/jsref/dom_obj_location.asp)
+##### 5】不向服务器请求的情况下修改url：location的hash模式和html5的history模式
+###### ①Location 对象
 Location 对象包含有关当前 URL 的信息；Location 对象是 Window 对象的一个部分，可通过 window.location 属性来访问。
 location.hash='foo' 设置或返回从井号 (#) 开始的 URL（锚）。（并不会请求服务器）
 **当hash只有一个#时，location.hash返回空字符串；当hash不止一个#时，location.hash返回#以及#后面的部分。当一个window的 hash （URL 中 # 以及#后面的部分，可通过location.hash返回）改变时就会触发 hashchange 事件。**
 **效果就是从localhost:8080/#/变成了localhost:8080/#/foo**
 location.href='xxx' 设置或返回完整的 URL。（会请求服务器）
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A1history-%E5%AF%B9%E8%B1%A1)②[History 对象](https://www.w3school.com.cn/jsref/dom_obj_history.asp)
+###### ②History 对象
 History 对象包含用户（在浏览器窗口中）访问过的 URL；History 对象是 window 对象的一部分，可通过 window.history 属性对其进行访问。
 history.pushState({data},'title','aaa')加入url到浏览器历史列表（类似入栈）
 此时修改的url是在#的前面部分，#后面的部分是hash来控制，对比上面location.hash，效果如下：
@@ -61,18 +61,18 @@ history.pushState({data},'title','aaa')加入url到浏览器历史列表（类�
 history.back()从当前url返回到历史列表中的上一个的url（类似出栈），相当于history.go(-1)
 history.replaceState({data},'title',?url)用新的url替换当前url
 history.forward()等价于history.go(1)有历史列表的情况下前进一个记录
-## [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E4%BA%8C%E3%80%81vue-router%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8)二、vue-router基本使用
-##### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#_1%E3%80%91%E8%AE%A4%E8%AF%86vue-router)1】[认识vue-router](https://router.vuejs.org/zh/)
+## 二、vue-router基本使用
+##### 1】认识vue-router
 ①vue-router是vue.js官方的路由插件，它和vue.js是深度集成的，适合用于构建单页面应用。
 ②vue-router是基于路由和组件的。路由用于设定访问路径，将路径和组件映射起来。在vue-router的单页面应用中，页面的路径的改变就是组件的切换。
-##### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#_2%E3%80%91%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8vue-router)2】安装和使用vue-router
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A0%E5%AE%89%E8%A3%85vue-router)①安装vue-router
+##### 2】安装和使用vue-router
+###### ①安装vue-router
 
 ```bash
 npm install vue-router --save
 ```
 
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A1%E5%9C%A8%E6%A8%A1%E5%9D%97%E5%8C%96%E5%B7%A5%E7%A8%8B%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%AE%83%EF%BC%88%E5%9B%A0%E4%B8%BA%E6%98%AF%E4%B8%80%E4%B8%AA%E6%8F%92%E4%BB%B6%EF%BC%8C%E6%89%80%E4%BB%A5%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87vue-use-%E6%9D%A5%E5%AE%89%E8%A3%85%E8%B7%AF%E7%94%B1%E5%8A%9F%E8%83%BD%EF%BC%89)②在模块化工程中使用它（因为是一个插件，所以可以通过Vue.use()来安装路由功能）
+###### ②在模块化工程中使用它（因为是一个插件，所以可以通过Vue.use()来安装路由功能）
 
 - 第一步：导入**路由对象**，并且调用**Vue.use(VueRouter)**（使用插件的时候都需要使用Vue.use(xxx)因为内部会执行xxx.install方法来安装插件）
 - 第二步：创建**路由实例**，并且传入**路由映射**配置
@@ -118,7 +118,7 @@ new Vue({
 })
 ```
 
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A2%E4%BD%BF%E7%94%A8vue-router%E7%9A%84%E6%AD%A5%E9%AA%A4)③使用vue-router的步骤
+###### ③使用vue-router的步骤
 
 - 第一步：创建路由组件
 - 第二步：配置路由映射（组件和路径映射关系，可以用mode来选择history模式，其默认为hash模式）（**非常要注意这里必须是配置routes属性名**）
@@ -166,19 +166,19 @@ const router=new VueRouter({
 </div>
 ```
 
-##### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#_3%E3%80%91%E8%A1%A5%E5%85%85router-link%E6%A0%87%E7%AD%BE%E7%9A%84%E5%B1%9E%E6%80%A7)3】补充router-link标签的属性
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A0to-xxx)①to="/xxx"
+##### 3】补充router-link标签的属性
+###### ①to="/xxx"
 点击之后需要到的路径
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A1tag-button)②tag="button"
+###### ②tag="button"
 默认是a标签，tag可以指定router-link的内容之后渲染成什么样式，比如上面的代码会被渲染成一个button标签而不是默认的a标签。
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A2replace%EF%BC%88%E6%B3%A8%EF%BC%9A%E6%AD%A4%E5%B1%9E%E6%80%A7%E4%B8%8D%E9%9C%80%E8%A6%81%E8%B5%8B%E5%80%BC%EF%BC%89)③replace（注：此属性不需要赋值）
+###### ③replace（注：此属性不需要赋值）
 replace不会留下history记录，所以指定replace的情况下，后退键返回到上一个页面中。
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A3active-class-active-%EF%BC%88%E4%B9%9F%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87%E5%9C%A8vuerouter%E5%AE%9E%E4%BE%8B%E4%B8%AD%E5%8A%A0%E5%85%A5%E4%B8%80%E4%B8%AA%E9%80%89%E9%A1%B9linkactiveclass-active-%E6%9D%A5%E7%BB%9F%E4%B8%80%E8%AE%BE%E7%BD%AE%EF%BC%89)④active-class="active"（也可以通过在VueRouter实例中加入一个选项linkActiveClass:'active'来统一设置）
+###### ④active-class="active"（也可以通过在VueRouter实例中加入一个选项linkActiveClass:'active'来统一设置）
 当router-link标签对应的路由匹配成功时，就会自动给当前元素设置一个**router-link-active**的class，可以在router-link标签中使用active-class属性来修改默认的名称。
 
 - 在进行高亮显示的导航菜单或者底部tabbar时，使用到该类。
 - 但是通常不会修改类的属性，会直接使用默认的**router-link-active**即可
-##### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#_4%E3%80%91%E9%80%9A%E8%BF%87%E4%BB%A3%E7%A0%81%E4%BD%BF%E7%94%A8-router%E6%8F%92%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E6%9D%A5%E8%B7%B3%E8%BD%AC%E8%B7%AF%E7%94%B1)4】通过代码使用$router插件中的全局变量来跳转路由
+##### 4】通过代码使用$router插件中的全局变量来跳转路由
 如果不想使用router-link标签的话可以用代码来实现路由：要展示相应组件内容还是要用router-view标签来实现。
 $router的方法和h5中的history模式差不多：有push(),back(),go(),replace()等方法。
 $router就是我们new VueRouter()对象，$route是指当前路由对象
@@ -213,13 +213,13 @@ export default {
 </style>
 ```
 
-##### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#_5%E3%80%91vue-router%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8)5】vue-router动态路由的使用
+##### 5】vue-router动态路由的使用
 在某些情况下，一个页面的path路径可能是不确定的，比如我们进入用户界面时，希望是如下的路径：
 
 - /user/aaaa或/user/bbbb
 - 除了有前面的/user之外，后面还更上了用户的ID
 - 这种path和Component的匹配关系，我们称之为动态路由（也是路由传递数据的一种方式）。
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A0%E5%9C%A8index-js%E4%B8%AD%E9%85%8D%E7%BD%AE%E8%B7%AF%E7%94%B1%E5%B9%B6%E5%AF%BC%E5%85%A5%E7%BB%84%E4%BB%B6)①在index.js中配置路由并导入组件
+###### ①在index.js中配置路由并导入组件
 
 ```
 {
@@ -228,7 +228,7 @@ export default {
     }
 ```
 
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A1%E5%9C%A8router-link%E6%A0%87%E7%AD%BE%E4%B8%AD%E7%9A%84to%E5%B1%9E%E6%80%A7%E8%BF%9B%E8%A1%8C%E4%BF%AE%E6%94%B9%EF%BC%88%E4%BD%BF%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E5%92%8C%E5%AD%97%E7%AC%A6%E6%8B%BC%E6%8E%A5%EF%BC%89)②在router-link标签中的to属性进行修改（使用数据绑定和字符拼接）
+###### ②在router-link标签中的to属性进行修改（使用数据绑定和字符拼接）
 
 ```html
 <router-link :to="'/user/'+userId" tag="button">用户</router-link>
@@ -241,7 +241,7 @@ data(){
 </script>
 ```
 
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A2%E5%A6%82%E6%9E%9C%E9%9C%80%E8%A6%81%E5%9C%A8%E7%94%A8%E6%88%B7%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%88%B6%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%EF%BC%8C%E9%9C%80%E8%A6%81%E4%BD%BF%E7%94%A8-route-params%EF%BC%88%E7%89%B9%E5%88%AB%E6%B3%A8%E6%84%8F%E8%BF%99%E9%87%8C%E8%83%BD%E7%9C%8B%E4%BD%9C%E7%88%B6%E4%BC%A0%E5%AD%90%E6%88%96%E8%80%85%E7%88%B6%E8%AE%BF%E9%97%AE%E5%AD%90%EF%BC%8C%E5%9B%A0%E4%B8%BA%E8%BF%99%E9%87%8C%E5%B9%B6%E6%B2%A1%E6%9C%89%E5%9C%A8%E7%88%B6%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%94%A8%E5%AD%90%E7%BB%84%E4%BB%B6%E6%A0%87%E7%AD%BE%EF%BC%8C%E5%8F%AA%E6%98%AF%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%89)③如果需要在用户子组件中使用父组件中的数据，需要使用$route.params（特别注意这里能看作父传子或者父访问子，因为这里并没有在父组件中用子组件标签，只是路由跳转的关系）
+###### ③如果需要在用户子组件中使用父组件中的数据，需要使用$route.params（特别注意这里能看作父传子或者父访问子，因为这里并没有在父组件中用子组件标签，只是路由跳转的关系）
 **$router可以理解为整个路由（用来路由跳转），$route可以理解为当前的一个路由（用来访问数据）**
 
 ```vue
@@ -265,18 +265,18 @@ data(){
 </script>
 ```
 
-##### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#_6%E3%80%91vue-router%E6%89%93%E5%8C%85%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90%EF%BC%9A%E8%B7%AF%E7%94%B1%E7%9A%84%E6%87%92%E5%8A%A0%E8%BD%BD-%E7%94%A8%E5%88%B0%E6%97%B6%EF%BC%8C%E5%86%8D%E5%8A%A0%E8%BD%BD-%EF%BC%88%E5%BC%82%E6%AD%A5%E7%BB%84%E4%BB%B6%EF%BC%89)6】vue-router打包文件解析：路由的懒加载(用到时，再加载)（异步组件）
+##### 6】vue-router打包文件解析：路由的懒加载(用到时，再加载)（异步组件）
 
 - 当打包构建应用时，JavaScript包会变得非常大，影响页面加载。
 - 如果我们能**把不同路由对应的组件分割成不同的代码块**，然后当路由被访问的时候才加载对应组件，这样就更加高效了。
 
 通过npm run build来打包的dist文件夹下除了有static中的文件外，还被分成了css文件夹和js文件夹。
 js文件夹下又打包了三个js文件进行三层划分：
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A0app-js)①app.js
+###### ①app.js
 当前应用程序开发的所有代码（业务代码）
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A1manifest-js)②manifest.js
+###### ②manifest.js
 为了打包的代码做底层支持（模块化相关的）
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A2-vendor-js)③ vendor.js
+###### ③ vendor.js
 供应商第三方的代码：比如vue、vue-router、axios、bs之类的
 
 ```
@@ -332,8 +332,7 @@ const router=new VueRouter({
 //3.将router对象挂载传入到Vue实例中,所以需要导出router对象
 export default router
 ```
-
-## [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E4%B8%89%E3%80%81vue-router%E5%B5%8C%E5%A5%97%E8%B7%AF%E7%94%B1)三、vue-router嵌套路由
+## 三、vue-router嵌套路由
 
 - 比如在home页面中，我们希望通过/home/news和/home/message访问一些内容。
 - 一个路径映射一个组件，访问这两个路径也会分别渲染两个组件。
@@ -344,7 +343,7 @@ export default router
 /home/news----------> News
 /home/message-----> Message
 /about------------------> About
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A0%E5%88%9B%E5%BB%BA%E7%9B%B8%E5%BA%94%E5%AD%90%E7%BB%84%E4%BB%B6)①创建相应子组件
+###### ①创建相应子组件
 这是新创建的HomeNews组件和HomeMessage组件
 
 ```vue
@@ -388,7 +387,7 @@ export default router
 </style>
 ```
 
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A1%E5%B0%86%E7%9B%B8%E5%BA%94%E5%AD%90%E7%BB%84%E4%BB%B6%E6%87%92%E5%8A%A0%E8%BD%BD%E5%88%B0%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%EF%BC%8C%E7%84%B6%E5%90%8E%E5%9C%A8%E7%88%B6%E7%BB%84%E4%BB%B6home%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE%E4%B8%AD%E7%94%A8children%E5%B1%9E%E6%80%A7%E9%85%8D%E7%BD%AE)②将相应子组件懒加载到路由配置文件中，然后在父组件home路由配置中用children属性配置
+###### ②将相应子组件懒加载到路由配置文件中，然后在父组件home路由配置中用children属性配置
 **（要非常注意children中的path属性值的前面不需要加/，否则会报错）**也可以在children属性中用redirect设置默认路径。
 这是在index.js路由配置文件中的修改：
 
@@ -452,7 +451,7 @@ const router=new VueRouter({
 export default router
 ```
 
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A2%E5%9C%A8%E7%88%B6%E7%BB%84%E4%BB%B6%E4%B8%AD%E4%BD%BF%E7%94%A8router-link%E5%92%8Crouter-view%E6%A0%87%E7%AD%BE%E8%BF%9B%E8%A1%8C%E6%B8%B2%E6%9F%93)③在父组件中使用router-link和router-view标签进行渲染
+###### ③在父组件中使用router-link和router-view标签进行渲染
 这是在Home组件中的修改：
 
 ```vue
@@ -474,17 +473,17 @@ export default router
 </style>
 ```
 
-## [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E5%9B%9B%E3%80%81vue-router%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92)四、vue-router参数传递
-##### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#_1%E3%80%91%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%EF%BC%9Aparams%E5%92%8Cquery)1】传递参数的两种方式：params和query
+## 四、vue-router参数传递
+##### 1】传递参数的两种方式：params和query
 URL:
 **协议://主机:端口/路径?查询#片段**
 **scheme://host:port/path?query#fragment**
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A0params%E7%9A%84%E7%B1%BB%E5%9E%8B%EF%BC%9A-%E4%BF%AE%E6%94%B9%E8%B7%AF%E5%BE%84%E7%9A%84%E6%96%B9%E5%BC%8F)①params的类型：(修改路径的方式)
+###### ①params的类型：(修改路径的方式)
 
 - 配置动态路由格式：/router/:id
 - 传递的方式：router-link标签中的to绑定对应的动态值，在子组件中使用$route.params.id获取值
 - 传递后形成的路径：/router/132，/router/abc
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A1query%E7%9A%84%E7%B1%BB%E5%9E%8B%EF%BC%9A%EF%BC%88%E6%B7%BB%E5%8A%A0%E6%9F%A5%E8%AF%A2%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%89)②query的类型：（添加查询的方式）
+###### ②query的类型：（添加查询的方式）
 
 - 配置路由的方式：/router，也就是普通配置
 - 传递的方式：对象中使用query的key作为传递方式，在router-link标签中的to属性绑定一个对象里面有path和query等参数，query（查询）本来就是一个对象类型，向里面传入查询条件，最后在子组件中使用$route.query获取之前插入的查询条件。达到通信的目的
@@ -534,7 +533,7 @@ active-class="active">档案</router-link>
 ```
 
 第四步：到第一步中的子组件中通过$route.query把查询条件取出来使用。
-##### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#_2%E3%80%91%E9%80%9A%E8%BF%87%E4%BB%A3%E7%A0%81%E4%BD%BF%E7%94%A8-router%E6%9D%A5%E8%B7%B3%E8%BD%AC%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BC%A0%E6%95%B0%E6%8D%AE)2】通过代码使用$router来跳转路由和传数据
+##### 2】通过代码使用$router来跳转路由和传数据
 **$router就是我们new VueRouter()对象，$route是指当前路由对象**
 
 ```vue
@@ -553,7 +552,7 @@ methods:{
   }
 ```
 
-##### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#_3%E3%80%91-router%E5%92%8C-route%E7%9A%84%E7%94%B1%E6%9D%A5)3】$router和$route的由来
+##### 3】$router和$route的由来
 **$router是整个项目的路由，$route是指当前活跃的路由。**
 
 - $router为VueRouter实例，想要导航到不同的URL，则使用$router.push等方法
@@ -595,7 +594,7 @@ object.defineProperty(Vue.prototype,'$route',{
 })
 ```
 
-## [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E4%BA%94%E3%80%81vue-router%E5%AF%BC%E8%88%AA%E5%AE%88%E5%8D%AB)五、vue-router导航守卫
+## 五、vue-router导航守卫
 NavigationGuard类似于生命周期钩子函数
 导航守卫中是：beforeEach、beforResolve、afterEach
 源码typescript类型如下：
@@ -608,8 +607,8 @@ export type NavigationGuard < V extends Vue = Vue > = (
 ) => any
 ```
 
-##### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#_1%E3%80%91%E5%85%A8%E5%B1%80%E5%AF%BC%E8%88%AA%E5%AE%88%E5%8D%AB)1】全局导航守卫
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A0%E5%89%8D%E7%BD%AE%E5%AE%88%E5%8D%AB%EF%BC%88%E5%9C%A8%E8%B7%B3%E8%BD%AC%E4%B9%8B%E5%89%8D%E8%BF%9B%E8%A1%8C%E5%9B%9E%E8%B0%83%EF%BC%89)①前置守卫（在跳转之前进行回调）
+##### 1】全局导航守卫
+###### ①前置守卫（在跳转之前进行回调）
 **添加路由配置中每个页面的元数据(meta描述数据的数据)，通过to对象中的matched[0]数组来解决嵌套路由的问题。**
 你可以使用 **router.beforeEach** 注册一个全局前置守卫：
 
@@ -684,7 +683,7 @@ router.beforeEach((to, from, next) => {
 - **to: Route**: 即将要进入的目标路由对象
 - **from: Route**: 当前导航正要离开的路由
 - **next: Function**: 调用该方法后，才能进入下一个钩子
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E2%91%A1%E5%90%8E%E7%BD%AE%E9%92%A9%E5%AD%90%EF%BC%88%E5%9C%A8%E8%B7%B3%E8%BD%AC%E4%B9%8B%E5%90%8E%E8%BF%9B%E8%A1%8C%E5%9B%9E%E8%B0%83%EF%BC%89)②后置钩子（在跳转之后进行回调）
+###### ②后置钩子（在跳转之后进行回调）
 router.afterEach()
 
 ```typescript
@@ -699,7 +698,7 @@ router.afterEach((to,from)=>{
 })//会发现beforeEach先打印，然后afterEach后打印
 ```
 
-##### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#_2%E3%80%91%E8%B7%AF%E7%94%B1%E7%8B%AC%E4%BA%AB%E5%AE%88%E5%8D%AB)2】路由独享守卫
+##### 2】路由独享守卫
 你可以在路由配置上直接定义 beforeEnter 守卫：
 
 ```
@@ -718,7 +717,7 @@ const router = new VueRouter({
 ```
 
 这些守卫与全局前置守卫的方法参数是一样的。
-##### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#_3%E3%80%91%E7%BB%84%E4%BB%B6%E5%86%85%E7%9A%84%E5%AE%88%E5%8D%AB)3】组件内的守卫
+##### 3】组件内的守卫
 最后，你可以在路由组件内直接定义以下路由导航守卫：
 
 - beforeRouteEnter
@@ -780,7 +779,7 @@ beforeRouteLeave (to, from, next) {
 }
 ```
 
-## [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#%E5%85%AD%E3%80%81keep-alive-%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6)六、keep-alive (动态组件)
+## 六、keep-alive (动态组件)
 ①**destroyed()钩子函数**与生命周期函数有关。组件中可以使用生命周期函数和keep-alive中的特有钩子函数activated()/deactivated()
 ②keep-alive -> activated()/deactivated()钩子函数
 ③首页中使用path属性记录离开时的路径，在beforRouteLeave中记录。
@@ -808,7 +807,7 @@ export default {
     }
 ```
 
-##### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#_1%E3%80%91keep-alive)1】keep-alive
+##### 1】keep-alive
 keep-alive是Vue内置的一个组件，可以使被包含的组件保留状态，或避免重新渲染，也就是**keep-alive中的组件不会被频繁的创建和销毁**。
 
 - 它有两个非常重要的属性：
@@ -819,7 +818,7 @@ keep-alive是Vue内置的一个组件，可以使被包含的组件保留状态�
 <keep-alive exclude="组件中和name属性的值相匹配"><router-view/></keep-alive>
 ```
 
-##### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vue-router/#_2%E3%80%91router-view)2】router-view
+##### 2】router-view
 router-view也是一个组件，如果直接被包在keep-alive里面，所有路径匹配到我的视图组件都会被缓存：
 
 ```html

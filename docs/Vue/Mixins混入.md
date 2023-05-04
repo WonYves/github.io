@@ -1,5 +1,5 @@
 # mixins混入
-### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/VueMixin/#%E5%B1%80%E9%83%A8%E7%BB%84%E4%BB%B6mixins%EF%BC%9A)局部组件mixins：
+### 局部组件mixins：
 混入 (mixin) 提供了一种非常灵活的方式，来分发 Vue 组件中的可复用功能。一个混入对象可以包含任意组件选项。当局部组件使用混入对象时，所有混入对象的选项将被“混合”进入该组件本身的选项。
 
 ```
@@ -23,13 +23,13 @@ var Component = Vue.extend({
 var component = new Component() // => "hello from mixin!"
 ```
 
-### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/VueMixin/#mixins%E7%9A%84%E9%80%89%E9%A1%B9%E5%90%88%E5%B9%B6%EF%BC%9A)mixins的选项合并：
+### mixins的选项合并：
 当组件和混入对象含有同名选项时，这些选项将以恰当的方式进行“合并”。
 
 - data对象在内部会进行递归合并，并在发生**冲突时以组件数据优先**。
 - 同名钩子函数将合并为一个数组，因此**都将被调用**。另外，**混入对象的钩子将在组件自身钩子之前调用**。
 - 值为对象的选项，例如 methods、components 和 directives，将被合并为同一个对象。两个对象键名冲突时，**取组件对象的键值对**。
-### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/VueMixin/#%E5%85%A8%E5%B1%80%E6%B7%B7%E5%85%A5mixin%EF%BC%9A)[全局混入mixin：](https://cn.vuejs.org/v2/guide/mixins.html#%E5%85%A8%E5%B1%80%E6%B7%B7%E5%85%A5)
+### 全局混入mixin：
 混入也可以进行全局注册。使用时**格外小心**！一旦使用全局混入，它将影响**每一个**之后创建的 Vue 实例。使用恰当时，这可以用来为自定义选项注入处理逻辑。
 
 ```
@@ -49,12 +49,12 @@ new Vue({
 // => "hello!"
 ```
 
-### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/VueMixin/#%E6%80%BB%E7%BB%93%EF%BC%9A)总结：
+### 总结：
 
 - 组件有mixins选项，是数组类型，里面可以接收mixin对象，mixins:[mixinObject]
 - 全局Vue对象可以调用mixin()方法，里面接收mixin对象，Vue.mixin(mixinObject)
 - mixin对象与组件选项会进行合并，如果有冲突，组件优先级高于mixin
-### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/VueMixin/#%E4%BD%BF%E7%94%A8mixin%E5%81%9A%E4%B8%80%E4%B8%AAui%E5%BA%93%EF%BC%9A)[使用mixin做一个UI库](https://www.bilibili.com/video/BV1LC4y1h7LQ?from=search&seid=7349708970822568843)：
+### 使用mixin做一个UI库：
 随便写一个复用的ui组件：
 
 ```vue

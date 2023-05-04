@@ -1,5 +1,5 @@
-## [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#%E4%B8%80%E3%80%81%E7%9B%91%E8%A7%86)一、监视
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_1%E3%80%81%E5%9C%A8new-vue%E9%87%8C%E9%9D%A2%E8%BF%99%E6%A0%B7%E5%86%99)1、在new Vue里面这样写
+## 一、监视
+###### 1、在new Vue里面这样写
 
 ```html
 watch：{key1:function(value){
@@ -7,88 +7,83 @@ this.key2=value}
 }
 ```
 
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_2%E3%80%81%E5%9C%A8new-vue%E5%A4%96%E9%9D%A2%E5%B0%B1%E7%94%A8vm%E5%AE%9E%E4%BE%8B%E6%9D%A5%E8%B0%83%E7%94%A8watch%EF%BC%88%EF%BC%89%E6%96%B9%E6%B3%95%E5%90%91%E9%87%8C%E9%9D%A2%E4%BC%A0%E5%8F%82)2、在new Vue外面就用vm实例来调用watch（）方法向里面传参
+###### 2、在new Vue外面就用vm实例来调用watch（）方法向里面传参
 
-## [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#%E4%BA%8C%E3%80%81%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7)二、计算属性
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_1%E3%80%81computed%EF%BC%9A-newkey-return-this-key1-this-key2-%E5%85%B6%E4%B8%ADnewkey%E6%98%AF%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0%E6%BB%A1%E8%B6%B31%E4%BD%A0%E8%87%AA%E5%B7%B1%E5%AE%9A%E4%B9%89%E7%9A%842%E4%BD%A0%E6%B2%A1%E6%9C%89%E8%B0%83%E7%94%A83%E4%BD%86%E6%9C%80%E7%BB%88%E5%AE%83%E6%89%A7%E8%A1%8C%E4%BA%86%E3%80%82%E5%AF%B9%E4%BA%8E%E6%AD%A4%E6%97%B6%E7%9A%84%E8%BF%99%E4%B8%AA%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0%E6%98%AF%E5%9C%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E6%98%BE%E7%A4%BA%E6%88%96%E8%80%85%E7%9B%B8%E5%85%B3%E7%9A%84data%E5%B1%9E%E6%80%A7%E6%95%B0%E6%8D%AE%E5%8F%91%E7%94%9F%E6%94%B9%E5%8F%98%E6%97%B6%E6%89%A7%E8%A1%8C%E3%80%82)1、computed：{newKey(){return this.key1+this.key2;}}其中newKey是回调函数满足1你自己定义的2你没有调用3但最终它执行了。对于此时的这个回调函数是在初始化显示或者相关的data属性数据发生改变时执行。
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_2%E3%80%81%E9%80%9A%E8%BF%87getter%E5%92%8Csetter%E5%AE%9E%E7%8E%B0%E5%AF%B9%E5%B1%9E%E6%80%A7%E6%95%B0%E6%8D%AE%E7%9A%84%E6%98%BE%E7%A4%BA%E5%92%8C%E7%9B%91%E8%A7%86computed-newkey-get-return-this-%E5%B1%9E%E6%80%A7%E5%90%8D-set-value-this-%E5%B1%9E%E6%80%A7%E5%90%8D-value)2、通过getter和setter实现对属性数据的显示和监视computed: {newKey: { get(){return this.属性名},set(value){this.属性名=value} } }
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_3%E3%80%81%E6%B6%89%E5%8F%8A%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E5%B0%B1%E5%AD%98%E5%9C%A8%E7%BC%93%E5%AD%98%E9%97%AE%E9%A2%98%EF%BC%8C%E5%A4%9A%E6%AC%A1%E8%AF%BB%E5%8F%96%E5%8F%AA%E6%89%A7%E8%A1%8C%E4%B8%80%E6%AC%A1getter%E8%AE%A1%E7%AE%97%EF%BC%81%EF%BC%81%EF%BC%81)3、涉及计算属性就存在缓存问题，多次读取只执行一次getter计算！！！
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_4%E3%80%81value-split-%E5%8F%AF%E4%BB%A5%E7%94%A8%E4%BA%8E%E6%8A%8A%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%86%E5%89%B2%E4%B8%BA%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E3%80%82%E4%BE%8B%E5%A6%82-sd-ad-%E5%B0%B1%E5%88%86%E6%88%90-sd-%E5%92%8C-ad-%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E3%80%82)4、value.split(' ')可以用于把一个字符串分割为两个数组。例如"sd ad"就分成"sd"和"ad"两个数组。
-## [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#%E4%B8%89%E3%80%81%E5%BC%BA%E5%88%B6%E7%BB%91%E5%AE%9Astyle%E5%92%8Cclass)三、强制绑定style和class
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_1%E3%80%81class%E7%BB%91%E5%AE%9A%E8%AF%AD%E6%B3%95%E6%98%AF-class-xxx-%E5%85%B6%E4%B8%ADxxx%E5%8F%AF%E4%BB%A5%E6%98%AF%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E5%AF%B9%E8%B1%A1%E3%80%81%E6%95%B0%E7%BB%84%E3%80%82)1、class绑定语法是 :class='xxx';其中xxx可以是字符串、对象、数组。
+## 二、计算属性
+###### 1、computed：{newKey(){return this.key1+this.key2;}}其中newKey是回调函数满足1你自己定义的2你没有调用3但最终它执行了。对于此时的这个回调函数是在初始化显示或者相关的data属性数据发生改变时执行。
+###### 2、通过getter和setter实现对属性数据的显示和监视computed: {newKey: { get(){return this.属性名},set(value){this.属性名=value} } }
+###### 3、涉及计算属性就存在缓存问题，多次读取只执行一次getter计算！！！
+###### 4、value.split(' ')可以用于把一个字符串分割为两个数组。例如"sd ad"就分成"sd"和"ad"两个数组。
+## 三、强制绑定style和class
+###### 1、class绑定语法是 :class='xxx';其中xxx可以是字符串、对象、数组。
 
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_2%E3%80%81%E5%BC%BA%E5%88%B6%E7%BB%91%E5%AE%9Astyle)2、强制绑定style
+###### 2、强制绑定style
 
-## [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#%E5%9B%9B%E3%80%81%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93-%E7%94%A8%E6%9D%A5%E5%AE%9E%E7%8E%B0%E6%A0%87%E7%AD%BE%E7%9A%84%E6%98%BE%E7%A4%BA%E5%92%8C%E9%9A%90%E8%97%8F%E7%9A%84)四、条件渲染(用来实现标签的显示和隐藏的)
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_1%E3%80%81%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93%E6%8C%87%E4%BB%A4%EF%BC%9Av-if%E3%80%81v-else%E3%80%81v-show)1、条件渲染指令：v-if、v-else、v-show
+## 四、条件渲染(用来实现标签的显示和隐藏的)
+###### 1、条件渲染指令：v-if、v-else、v-show
 
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_2%E3%80%81v-if%E5%92%8Cv-show%E7%9A%84%E5%8C%BA%E5%88%AB)2、v-if和v-show的区别
+###### 2、v-if和v-show的区别
 v-if是把标签给删掉，而v-show是让标签隐藏起来还在源码中还有标签的样式style="display:none;",如果需要频繁切换v-show比较好
-## [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#%E4%BA%94%E3%80%81%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93)五、列表渲染
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_1%E3%80%81v-for%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84)1、v-for遍历数组
+## 五、列表渲染
+###### 1、v-for遍历数组
 
 数组更新检测：vue中包含一组观察数组的变异方法，所以他们也将会触发视图更新。
 例如：变异方法：push(),pop(),shift(), unshift(),splice(),sort(),reverse()等方法 都是vue进行包装(1、调用原生的2、更新界面)过的方法
 ①vue本身只是监视了persons的改变，没有监视数组内部数据的改变，需要用规定的函数来实现，并不是简单的变量赋值。
 ②vue重写了数组中的一系列改变数组内部数据的方法（先调用原生，再更新界面）--->数组内部改变，界面自动变化。
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_2%E3%80%81v-for%E9%81%8D%E5%8E%86%E5%AF%B9%E8%B1%A1)2、v-for遍历对象
+###### 2、v-for遍历对象
 
-## [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#%E5%85%AD%E3%80%81%E5%88%97%E8%A1%A8%E7%9A%84%E8%BF%87%E6%BB%A4%E5%92%8C%E6%8E%92%E5%BA%8F)六、列表的过滤和排序
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_1%E3%80%81%E8%BF%87%E6%BB%A4%E6%98%AF%E6%8E%8C%E6%8F%A1filter-%E6%96%B9%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%8C%E4%BE%8B%E5%A6%82%EF%BC%9Apersons-filter-flag-flag-name-indexof-searchname-1)1、过滤是掌握filter()方法的使用，例如：persons.filter(flag=>flag.name.indexOf(searchName)!==-1)
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_2%E3%80%81%E6%8E%92%E5%BA%8F%E6%98%AF%E6%8E%8C%E6%8F%A1sort-%E6%96%B9%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%8C%E4%BE%8B%E5%A6%82%EF%BC%9Afpersons-sort-function-p1-p2-%E8%A7%84%E5%AE%9A%EF%BC%9A%E5%A6%82%E6%9E%9C%E8%BF%94%E5%9B%9E%E8%B4%9F%E6%95%B0p1%E5%9C%A8%E5%89%8D%EF%BC%8C%E8%BF%94%E5%9B%9E%E6%AD%A3%E6%95%B0p2%E5%9C%A8%E5%89%8D)2、排序是掌握sort()方法的使用，例如：fPersons.sort(function(p1,p2)规定：如果返回负数p1在前，返回正数p2在前
+## 六、列表的过滤和排序
+###### 1、过滤是掌握filter()方法的使用，例如：persons.filter(flag=>flag.name.indexOf(searchName)!==-1)
+###### 2、排序是掌握sort()方法的使用，例如：fPersons.sort(function(p1,p2)规定：如果返回负数p1在前，返回正数p2在前
 
-## [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#%E4%B8%83%E3%80%81%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86)七、事件处理
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_1%E3%80%81%E7%BB%91%E5%AE%9A%E7%9B%91%E5%90%AC)1、绑定监听
+## 七、事件处理
+###### 1、绑定监听
 ①$event的理解
 
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_2%E3%80%81%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6)2、事件修饰符
+###### 2、事件修饰符
 ①停止事件冒泡 @click.stop="test6"
 ②阻止事件的默认行为 @click.prevent="test7"
 
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_3%E3%80%81%E6%8C%89%E9%94%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6)3、按键修饰符
+###### 3、按键修饰符
 @keyup.enter和@keyup.13一样
 系统中每一个按键都有一个keycode值
 
-## [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#%E5%85%AB%E3%80%81%E8%A1%A8%E5%8D%95%E6%95%B0%E6%8D%AE%E7%9A%84%E8%87%AA%E5%8A%A8%E6%94%B6%E9%9B%86%EF%BC%88%E8%A1%A8%E5%8D%95%E8%BE%93%E5%85%A5%E7%BB%91%E5%AE%9A%EF%BC%89)八、表单数据的自动收集（表单输入绑定）
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_1%E3%80%81input-type-text-%E5%92%8Ctype-password-%E7%B1%BB%E5%9E%8B)1、input type="text"和type="password"类型
-
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_2%E3%80%81input-type-radio-%E7%B1%BB%E5%9E%8B%EF%BC%88%E5%8D%95%E9%80%89%E6%A1%86%EF%BC%8C%E5%8F%AA%E8%83%BD%E9%80%89%E4%B8%80%E4%B8%AA%EF%BC%89%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9E%8B%EF%BC%89)2、input type="radio"类型（单选框，只能选一个）（字符串型）
-
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_3%E3%80%81input-type-checkbox-%E7%B1%BB%E5%9E%8B%EF%BC%88%E5%A4%9A%E9%80%89%E6%A1%86%EF%BC%8C%E5%8F%AF%E4%BB%A5%E4%B8%80%E6%AC%A1%E9%80%89%E5%A4%9A%E4%B8%AA%EF%BC%89%EF%BC%88%E6%95%B0%E7%BB%84%E5%9E%8B%EF%BC%89)3、input type="checkbox"类型（多选框，可以一次选多个）（数组型）
-
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_4%E3%80%81select-option%E7%B1%BB%E5%9E%8B)4、select_option类型
-
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_5%E3%80%81textarea%E7%B1%BB%E5%9E%8B)5、textarea类型
-
-## [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#%E4%B9%9D%E3%80%81vue%E5%AE%9E%E4%BE%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F)九、VUE实例生命周期
+## 八、表单数据的自动收集（表单输入绑定）
+###### 1、input type="text"和type="password"类型
+###### 2、input type="radio"类型（单选框，只能选一个）（字符串型）
+###### 3、input type="checkbox"类型（多选框，可以一次选多个）（数组型）
+###### 4、select_option类型
+###### 5、textarea类型
+## 九、VUE实例生命周期
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/32841606/1682926009380-6fa40074-4924-4491-ba3b-996172780527.png#averageHue=%23fefdfb&clientId=u9bc58bfe-6690-4&from=paste&id=u3b419a45&originHeight=3039&originWidth=1200&originalType=url&ratio=1.25&rotation=0&showTitle=false&size=255207&status=done&style=none&taskId=udd69835b-fdb7-4a38-92fe-120f3415805&title=)
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_1%E3%80%81%E6%9C%89%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5%EF%BC%9A%E2%91%A0%E5%88%9D%E5%A7%8B%E5%8C%96%E6%98%BE%E7%A4%BA%E2%91%A1%E6%9B%B4%E6%96%B0%E6%98%BE%E7%A4%BA%E2%91%A2%E6%AD%BB%E4%BA%A1%EF%BC%88%E6%AF%8F%E4%B8%AA%E9%98%B6%E6%AE%B5%E9%83%BD%E6%9C%89%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0%EF%BC%89)1、有三个阶段：①初始化显示②更新显示③死亡（每个阶段都有回调函数）
+###### 1、有三个阶段：①初始化显示②更新显示③死亡（每个阶段都有回调函数）
 用的最多的是mounted(){}，beforeDestroy(){}，destroy(){}
 
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_2%E3%80%81vue%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F)2、vue对象的生命周期
+###### 2、vue对象的生命周期
 ①初始化显示
 *beforeCreate() *created() *beforeMount() *mounted()
 ②更新状态:this.xxx = value
 *beforeUpdate() *updated()
 ③销毁vue实例：vm.$destroy()
 *beforeDestroy() *destroyed()
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_3%E3%80%81%E5%B8%B8%E7%94%A8%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%96%B9%E6%B3%95)3、常用的生命周期方法
+###### 3、常用的生命周期方法
 mounted()：发送ajax请求，启动定时器等异步任务
 beforeDestroy()：做收尾工作，如：清除定时器
-## [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#%E5%8D%81%E3%80%81%E8%BF%87%E6%B8%A1%E4%B8%8E%E5%8A%A8%E7%94%BB)十、过渡与动画
+## 十、过渡与动画
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/32841606/1682926009312-e5e5889e-6504-494c-8ed6-9ccb69e3393b.png#averageHue=%23fbeeed&clientId=u9bc58bfe-6690-4&from=paste&id=u0fa7e596&originHeight=600&originWidth=1200&originalType=url&ratio=1.25&rotation=0&showTitle=false&size=50536&status=done&style=none&taskId=ufd4605c7-ebec-46db-be12-5a8c161b3bf&title=)
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_1%E3%80%81css%E4%B8%AD%E5%8F%AF%E8%83%BD%E6%B6%89%E5%8F%8A%E7%9A%84class%E5%90%8D%EF%BC%9A-v-enter-active-v-enter-v-enter-to-v-leave-active-v-leave-v-leave-to)1、css中可能涉及的class名：.v-enter-active .v-enter .v-enter-to .v-leave-active .v-leave .v-leave-to
+###### 1、css中可能涉及的class名：.v-enter-active .v-enter .v-enter-to .v-leave-active .v-leave .v-leave-to
 1)在目标元素外包裹<transition name="xxx">
 2)定义class样式①指定过渡样式：transition②指定隐藏后的样式：opacity/其他
 
-## [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#%E5%8D%81%E4%B8%80%E3%80%81%E8%BF%87%E6%BB%A4%E5%99%A8)十一、过滤器
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_1%E3%80%81%E5%AE%9A%E4%B9%89%E8%BF%87%E6%BB%A4%E5%99%A8)1、定义过滤器
+## 十一、过滤器
+###### 1、定义过滤器
 
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_2%E3%80%81%E4%BD%BF%E7%94%A8%E8%BF%87%E6%BB%A4%E5%99%A8)2、使用过滤器
+###### 2、使用过滤器
 在标签内写
 
-## [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#%E5%8D%81%E4%BA%8C%E3%80%81%E5%86%85%E7%BD%AE%E6%8C%87%E4%BB%A4%E4%B8%8E%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4)十二、内置指令与自定义指令
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_1%E3%80%81%E5%B8%B8%E8%A7%81%E5%86%85%E7%BD%AE%E6%8C%87%E4%BB%A4)1、常见内置指令
+## 十二、内置指令与自定义指令
+###### 1、常见内置指令
 1】v:text更新元素的textContent
 2】v-html更新元素的innerHTML
 3】v-if如果为true当前标签才会输出到页面
@@ -100,7 +95,7 @@ beforeDestroy()：做收尾工作，如：清除定时器
 9】v-model双向数据绑定
 10】ref指定唯一标识，vue对象通过$els属性访问这个元素对象
 11】v-cloak防止闪现，与css配合[v-cloak]{display:none}用属性选择器
-###### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_2%E3%80%81%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4)2、自定义指令
+###### 2、自定义指令
 1】注册全局指令
 Vue.directive('my-directive',function(el,binding){
 el.innerHTML=binding.value.toupperCase()
@@ -112,11 +107,11 @@ el.innerHTML=binding.value.toupperCase() } }
 3】使用指令
 v-my-directive='xxx'
 
-## [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#%E5%8D%81%E4%B8%89%E3%80%81%E6%8F%92%E4%BB%B6-js%E5%BA%93)十三、插件(js库)
-##### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_1%E3%80%91%E9%A6%96%E5%85%88%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAvue-myplugin-js%E6%96%87%E4%BB%B6)1】首先创建一个vue-myPlugin.js文件
+## 十三、插件(js库)
+##### 1】首先创建一个vue-myPlugin.js文件
 
-##### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_2%E3%80%91%E5%A6%82%E6%9E%9C%E8%A6%81%E4%BD%BF%E7%94%A8%E6%8F%92%E4%BB%B6js%E5%BA%93%EF%BC%8C%E5%BF%85%E9%A1%BB%E8%A6%81%E6%B3%A8%E6%84%8F%E5%A3%B0%E6%98%8E%E4%BD%BF%E7%94%A8%E6%8F%92%E4%BB%B6vue-use-myplugin)2】如果要使用插件js库，必须要注意声明使用插件Vue.use(MyPlugin)
-##### [#](https://rayhomie.gitee.io/rayhomieblog/VUE/vueBase/#_3%E3%80%91%E8%BF%98%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%EF%BC%9A%E5%AE%9E%E4%BE%8B%E7%9A%84%E6%96%B9%E6%B3%95%E7%BB%9F%E4%B8%80%E7%94%A8-%E7%AC%A6%E6%9D%A5%E4%B8%8E%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95%E7%9B%B8%E5%8C%BA%E5%88%AB%EF%BC%88-%E7%AC%A6%E5%91%BD%E5%90%8D%E6%98%AFvue%E5%86%85%E9%83%A8%E7%9A%84%E5%87%BD%E6%95%B0%EF%BC%89)3】还需要注意：实例的方法统一用$符来与函数对象的方法相区别（$符命名是vue内部的函数）
+##### 2】如果要使用插件js库，必须要注意声明使用插件Vue.use(MyPlugin)
+##### 3】还需要注意：实例的方法统一用$符来与函数对象的方法相区别（$符命名是vue内部的函数）
 
 ```html
 vm.$watch('key1',function(value){
