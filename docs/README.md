@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /ohwo2.jpg
-heroText: Wiess
+heroText: Way
 tagline: 前端开发之路
 actionText: 出发 →
 actionLink: /React/react.md

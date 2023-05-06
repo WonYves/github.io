@@ -1,6 +1,6 @@
 // @ts-check
 module.exports = {
-    title: "Wiess's blog",
+    title: "Way's blog",
     description: '分享笔记，技术博客',
     head:[
         [
@@ -42,7 +42,7 @@ module.exports = {
                 {text:'重绘回流(重排)', link: '/JavaScript/重绘回流.md'},
                 {text:'call、apply、bind方法', link: '/JavaScript/call、apply、bind.md'},
                 {text:'设计模式', link: '/JavaScript/设计模式.md'},
-                {text:'手写promise', link: '/JavaScript/手写promise.md'},
+                {text:'手撕promise', link: '/JavaScript/手写promise.md'},
                 {text:'TypeScript', link: '/JavaScript/TypeScript.md'},
                 {text:'Ajax、Fetch、Axios这三者有什么区别', link: '/talk/Ajax、Fetch、Axios这三者有什么区别.md'},
             ]
@@ -58,15 +58,15 @@ module.exports = {
             },
             { text: '随便聊聊', 
             items:[
-                {text:'Css基础+css3', link: '/Css/CSS.md'},
-                {text:'Css常用属性', link: '/Css/css属性.md'},
-                {text:'WebPack入门基础', link: '/WebPack/WebPack.md'},
-                {text:'WebPack面试题', link: '/WebPack/WebPack面试题.md'},
-                {text:'高频面试题', link: '/talk/talk.md'},
-                {text:'git使用', link: '/talk/git.md'},
+                {text:'Css+css3', link: '/Css/CSS.md'},
+                {text:'Css属性', link: '/Css/css属性.md'},
+                {text:'WebPack', link: '/WebPack/WebPack.md'},
+                {text:'WebPack2', link: '/WebPack/WebPack面试题.md'},
+                {text:'talk', link: '/talk/talk.md'},
+                {text:'git', link: '/talk/git.md'},
                 {text:'小程序', link: '/talk/小程序.md'},
                 {text:'uniapp购物车', link: '/talk/uniapp购物车.md'},
-                {text:'三种排序算法', link: '/talk/三种排序算法.md'},
+                {text:'冒泡选择插入', link: '/talk/三种排序算法.md'},
             ]
             },
         ],

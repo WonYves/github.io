@@ -119,9 +119,9 @@ new Vue({
 ```
 
 ###### ③使用vue-router的步骤
-
+```
 - 第一步：创建路由组件
-- 第二步：配置路由映射（组件和路径映射关系，可以用mode来选择history模式，其默认为hash模式）（**非常要注意这里必须是配置routes属性名**）
+- 第二步：配置路由映射（组件和路径映射关系，可以用mode来选择history模式，其默认为hash模式
 - 第三步：使用路由（通过<router-link>和<router-view>）
 - <router-link>就是可以点击的超链接，通过to="/xxx"来设置点击之后修改网页地址后的内容，有点像a标签。（该标签是一个vue-router中已经内置的组件,它会被渲染成一个<a>标签）
 - <router-view>就是将切换了网页路径之后，将要渲染的组件在什么位置显示。（该标签会根据当前的路径,动态渲染出不同的组件）
@@ -568,6 +568,7 @@ import router from '../router'
             console.log(router)//打印的都是一样内容也就是new的VueRouter()对象
             console.log(this.$route)//当前页面的路由信息
           }
+ }
  }
 ```
 
