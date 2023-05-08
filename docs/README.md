@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /ohwo2.jpg
+heroImage: /ohwo/ohwo2.jpg
 heroText: Way
 tagline: 前端开发之路
 actionText: 出发 →
